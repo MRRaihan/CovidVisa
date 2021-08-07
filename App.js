@@ -10,6 +10,7 @@ import MobileOTP from "./src/Components/MobileOTP";
 import Login from "./src/Accounts/Login";
 import NIDScan from "./src/Components/NIDScan";
 import FaceScan from "./src/Components/FaceScan";
+import PersonInfo from "./src/Components/PersonInfo";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,12 +18,14 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+      <Stack.Screen name="NIDScan" component={NIDScan} />
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="MobileOTP" component={MobileOTP} />
         <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="NIDScan" component={NIDScan} />
+        
         <Stack.Screen name="FaceScan" component={FaceScan} />
+        <Stack.Screen name="PersonaInfo" component={PersonInfo} /> 
       </Stack.Navigator>
     </NavigationContainer>
   );

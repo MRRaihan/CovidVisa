@@ -49,8 +49,8 @@ const styles = StyleSheet.create({
               marginBottom: 20,
           },
           personNID:{
-                    maxHeight:  130,
-                    maxWidth: 250,
+                    maxHeight:  150,
+                    Width: 350,
 
           },
           nidActions:{

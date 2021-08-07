@@ -25,7 +25,7 @@ const FaceScan = (props) => (
         <View>
             <TouchableOpacity>
                 <Button onPress={()=>{
-                    props.navigation.navigate("Welcome")
+                    props.navigation.navigate("PersonaInfo")
           }} style={styles.nextActions}> <View style={styles.nextActionsView}>Next</View> </Button>
             </TouchableOpacity>
         </View>
@@ -49,8 +49,8 @@ const styles = StyleSheet.create({
               marginBottom: 20,
           },
           personNID:{
-                    maxHeight:  130,
-                    maxWidth: 250,
+            maxHeight:  150,
+            maxWidth: 350,
 
           },
           nidActions:{
