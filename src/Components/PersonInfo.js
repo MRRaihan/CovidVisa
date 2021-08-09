@@ -113,7 +113,7 @@ const PersonInfo = (props) => {
                             </TouchableOpacity>
 
                           <Button style={styles.nextBTN} title="Next" onPress={()=>{
-                                        props.navigation.navigate("Welcome")
+                                        props.navigation.navigate("Home")
                               }}/>
 
                     </View>
