@@ -14,7 +14,7 @@ import Antibody from "../../../assets/images/CAntibody.jpeg";
 import PCR from "../../../assets/images/CPCR.jpeg";
 import Vaccination from "../../../assets/images/Vaccination_200x100.jpeg";
 import AddCountry from "../../../assets/images/CAddCountry.jpeg";
-import Booster from "../../../assets/images/CBooster.jpeg"
+import Booster from "../../../assets/images/CBooster.jpeg";
 
 import NavigationTab from "../navigationTab/NavigationTab";
 
@@ -63,7 +63,11 @@ const Home = (props) => (
               />
             </TouchableOpacity>
           </View>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              props.navigation.navigate("Antibody");
+            }}
+          >
             <Image style={styles.SliderImage} source={Antibody} />
           </TouchableOpacity>
         </Card>
@@ -93,7 +97,11 @@ const Home = (props) => (
               />
             </TouchableOpacity>
           </View>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              props.navigation.navigate("PCR");
+            }}
+          >
             <Image style={styles.SliderImage} source={PCR} />
           </TouchableOpacity>
         </Card>
@@ -132,7 +140,11 @@ const Home = (props) => (
               />
             </TouchableOpacity>
           </View>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress ={() =>{
+                  props.navigation.navigate("Vaccination")
+              }}
+          >
             <Image style={styles.SliderImage} source={Vaccination} />
           </TouchableOpacity>
         </Card>
@@ -162,7 +174,11 @@ const Home = (props) => (
               />
             </TouchableOpacity>
           </View>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              props.navigation.navigate("AddCountry");
+            }}
+          >
             <Image style={styles.SliderImage} source={AddCountry} />
           </TouchableOpacity>
         </Card>
@@ -201,7 +217,11 @@ const Home = (props) => (
               />
             </TouchableOpacity>
           </View>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              props.navigation.navigate("Booster");
+            }}
+          >
             <Image style={styles.SliderImage} source={Booster} />
           </TouchableOpacity>
         </Card>
@@ -217,7 +237,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     height: "100%",
-    width: "80%",
+    width: "100%",
   },
   Slider: {
     height: 5,
@@ -247,7 +267,34 @@ const styles = StyleSheet.create({
   SliderImage: {
     height: 55,
     width: "100%",
-  }
+  },
+  //           nidComment:{
+  //               color: 'gray',
+  //               fontSize: 20,
+  //               justifyContent: 'center',
+  //               alignItems: 'center',
+  //               marginBottom: 20,
+  //           },
+  //           personNID:{
+  //                     maxHeight:  150,
+  //                     Width: 350,
+
+  //           },
+  //           nidActions:{
+  //             flexDirection:'row',
+  //             justifyContent: 'center',
+  //             alignItems: 'center'
+  //         },
+  //         nextActions: {
+  //             justifyContent: 'center',
+  //             alignItems: 'center',
+  //             marginTop: 15,
+  //             color: "white",
+  //             backgroundColor: 'blue'
+  //         },
+  //         nextActionsView:{
+  //             color: "white",
+  //         }
 });
 
 export default Home;

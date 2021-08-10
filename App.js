@@ -18,6 +18,12 @@ import Notification from "./src/Components/Home/Notification";
 import UserProfile from "./src/Components/Home/UserProfile";
 import NavigationTab from './src/Components/navigationTab/NavigationTab';
 
+import Antibody from "./src/Components/Home/HomeComponents/Antibody";
+import PCR from "./src/Components/Home/HomeComponents/PCR";
+import Vaccination from "./src/Components/Home/HomeComponents/Vaccination";
+import AddCountry from "./src/Components/Home/HomeComponents/AddCountry";
+import Booster from "./src/Components/Home/HomeComponents/Booster";
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -38,6 +44,11 @@ export default function App() {
         <Stack.Screen name="Notification" component={Notification} />
         <Stack.Screen name="UserProfile" component={UserProfile} />
 
+        <Stack.Screen name="Antibody" component={Antibody} />
+        <Stack.Screen name="PCR" component={PCR} />
+        <Stack.Screen name="Vaccination" component={Vaccination} />
+        <Stack.Screen name="AddCountry" component={AddCountry} />
+        <Stack.Screen name="Booster" component={Booster} />
       </Stack.Navigator>
     </NavigationContainer>
   );

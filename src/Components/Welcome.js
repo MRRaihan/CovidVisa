@@ -1,18 +1,19 @@
 import React, {useState} from 'react';
 import logo from '../../assets/images/logo.png';
 
-import {View, StyleSheet, Image, Button} from 'react-native';
+import {View, StyleSheet, Image, Button, TouchableOpacity} from 'react-native';
 
 const Welcome = (props) => {
 
           return (
                     <View style={styles.container}>
-                              <Image style={styles.logo}
-                                        source={logo}
-                              />
-                              <Button title="Next" onPress={()=>{
+                              <TouchableOpacity onPress={() =>{
                                         props.navigation.navigate("Signup")
-                              }}/>
+                              }}>
+                                        <Image style={styles.logo}
+                                                  source={logo}
+                                        />
+                              </TouchableOpacity>
 
                     </View>
           );
@@ -20,12 +21,13 @@ const Welcome = (props) => {
 
 const styles = StyleSheet.create({
           container: {
-                    flexDirection: 'column',
+                    flex: 1,
                     justifyContent: 'center',
                     alignItems: 'center',
                     height: '100%'
           },
           logo: {
+                    flex: 1,
                     justifyContent: 'center',
                     alignItems: 'center',
                     width: 300,
