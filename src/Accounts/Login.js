@@ -10,7 +10,7 @@ import { StyledContainer, InnerContainer, PageLogo, PageTitle, SubTitle, StyledF
 //Colors
 const {brand, darkLight, primary} = Colors;
 
-import {View} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
 
 const Login = (props) => {
           const [hidePassword, setHidePassword ] = useState(true);
@@ -61,7 +61,11 @@ const Login = (props) => {
                                                             <ExtraView>
                                                                       <ExtraText>Don't Have an account already! </ExtraText>
                                                                       <TextLink>
+                                                                      <TouchableOpacity onPress={() => {
+                                                                                props.navigation.navigate("Signup");
+                                                                      }}>
                                                                                 <TextLinkContent>Signup</TextLinkContent>
+                                                                      </TouchableOpacity>
                                                                       </TextLink>
                                                             </ExtraView>
                                                   </StyledFromArea>

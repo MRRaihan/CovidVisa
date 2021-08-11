@@ -104,7 +104,7 @@ const PersonInfo = (props) => {
                                 />
                           </View>
                           
-                          <TextInput style={styles.inputField} placeholder="Full Name" />
+                          <TextInput style={styles.inputField} placeholder="Insert your Covid-19 recovery date" />
 
                             <TouchableOpacity  style={styles.attachedFile} 
                                 onPress={() => this.openDocumentFile()}

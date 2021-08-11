@@ -98,7 +98,12 @@ const Signup = (props) => {
                                                             <ExtraView>
                                                                       <ExtraText>Already have an account! </ExtraText>
                                                                       <TextLink>
+                                                                      <TouchableOpacity onPress={() => {
+                                                                                props.navigation.navigate("Login");
+                                                                      }}>
                                                                                 <TextLinkContent>Login</TextLinkContent>
+                                                                      </TouchableOpacity>
+                                                                                
                                                                       </TextLink>
                                                             </ExtraView>
                                                   </StyledFromArea>
