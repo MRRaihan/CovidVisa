@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
                     alignItems: 'center',
                     width: 300,
                     height: 200,
+                    marginTop: 150
           },
 })
 export default Welcome;

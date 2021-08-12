@@ -16,7 +16,8 @@ import Home from "./src/Components/Home/Home";
 import Scan from "./src/Components/Home/Scan";
 import Notification from "./src/Components/Home/Notification";
 import UserProfile from "./src/Components/Home/UserProfile";
-import NavigationTab from './src/Components/navigationTab/NavigationTab';
+import PersonalInfoEdit from "./src/Components/Home/PersonalInfoEdit";
+import NavigationTab from "./src/Components/navigationTab/NavigationTab";
 
 import Antibody from "./src/Components/Home/HomeComponents/Antibody";
 import PCR from "./src/Components/Home/HomeComponents/PCR";
@@ -30,6 +31,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+      
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="MobileOTP" component={MobileOTP} />
@@ -43,6 +45,7 @@ export default function App() {
         <Stack.Screen name="Scan" component={Scan} />
         <Stack.Screen name="Notification" component={Notification} />
         <Stack.Screen name="UserProfile" component={UserProfile} />
+        <Stack.Screen name="Personal Information" component={PersonalInfoEdit}/>
 
         <Stack.Screen name="Antibody" component={Antibody} />
         <Stack.Screen name="PCR" component={PCR} />

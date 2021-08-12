@@ -101,11 +101,12 @@ export const StyledTextInput = styled.TextInput`
           padding-left: 55px;
           padding-right: 55px;
           border-radius: 5px;
+          border: ${tertiary};
           font-size: 16px;
           height: 60px;
           marginVertical: 3px;
           margin-bottom: 10px;
-          color: ${tertiary};
+          border-color: ${secondary};
 `;
 
 export const StyledInputLabel = styled.Text`
