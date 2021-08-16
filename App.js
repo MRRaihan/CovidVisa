@@ -25,13 +25,20 @@ import Vaccination from "./src/Components/Home/HomeComponents/Vaccination";
 import AddCountry from "./src/Components/Home/HomeComponents/AddCountry";
 import Booster from "./src/Components/Home/HomeComponents/Booster";
 
+// -----------> Scanning Page
+import ScanRegisteredPerson from "./src/Components/Camera/ScanRegisteredPerson";
+
+
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-      
+
+      <Stack.Screen name="ScanRegisteredPerson" component={ScanRegisteredPerson} />
+
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="MobileOTP" component={MobileOTP} />
@@ -52,6 +59,9 @@ export default function App() {
         <Stack.Screen name="Vaccination" component={Vaccination} />
         <Stack.Screen name="AddCountry" component={AddCountry} />
         <Stack.Screen name="Booster" component={Booster} />
+        
+        
+
       </Stack.Navigator>
     </NavigationContainer>
   );
