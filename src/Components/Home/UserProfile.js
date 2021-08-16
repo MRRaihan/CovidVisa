@@ -125,15 +125,15 @@ const styles = StyleSheet.create({
   AntibodyLogo: {
     justifyContent: "center",
     alignItems: "center",
-    maxHeight: "10%",
-    maxWidth: "20%",
+    height: "10%",
+    width: "20%",
     padding: 10,
     margin: 10,
   },
   AntibodyLogoImg: {
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: "100%",
+    borderRadius: 100,
     height: 150,
     width: 150,
   },

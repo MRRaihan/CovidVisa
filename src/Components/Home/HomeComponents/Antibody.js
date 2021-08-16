@@ -84,8 +84,8 @@ const styles = StyleSheet.create({
   AntibodyLogo: {
     justifyContent: "center",
     alignItems: "center",
-    maxHeight: "10%",
-    maxWidth: "20%",
+    height: "10%",
+    width: "20%",
     padding: 10,
     margin: 10,
   },

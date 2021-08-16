@@ -176,7 +176,7 @@ const Home = (props) => (
           </View>
           <TouchableOpacity
             onPress={() => {
-              props.navigation.navigate("AddCountry");
+              props.navigation.navigate("ScanRegisteredPerson");
             }}
           >
             <Image style={styles.SliderImage} source={AddCountry} />
