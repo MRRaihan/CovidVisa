@@ -4,7 +4,7 @@ StyleSheet,
 Text,
 View,
 SafeAreaView,
-TouchableOpacity, Modal, Image, Button, Alert
+TouchableOpacity, Modal, Image, Button
 } from "react-native";
 import { Camera } from "expo-camera";
 import * as Permissions from 'expo-permissions';
@@ -12,7 +12,7 @@ import * as MediaLibrary from 'expo-media-library';
 
 import { FontAwesome } from "@expo/vector-icons";
 
-function ScanRegisteredPerson(props) {
+function MatchScanRegisterPerson(props) {
 const [type, setType] = useState(Camera.Constants.Type.back);
 const [hasPermission, setHasPermission] = useState(null);
 const camRef = useRef(null);
@@ -49,20 +49,8 @@ async function takePicture() {
 
 async function savePicture(){
           const asset = await MediaLibrary.createAssetAsync(capturedPhoto)
-          .then(() =>{  
-                Alert.alert(  
-                    `Matched!!!`,  
-                    `your name is Ashfaque Hossain and ID is 234 456 876 .`,  
-                    [  
-                        {  
-                            text: 'Retry',  
-                            onPress: () => console.log('Retry the process for mismatch!'),  
-                            style: 'cancel',  
-                        },  
-                        {text: 'OK', onPress: () => console.log('OK Pressed')},  
-                    ],  
-                    {cancelable: false}  
-                )
+          .then(() =>{
+                    alert("Successfully saved!");
           })
           .catch(error =>{
                     console.log('err',error);
@@ -175,4 +163,4 @@ nextActionsView:{
 }
 });
 
-export default ScanRegisteredPerson;
+export default MatchScanRegisterPerson;

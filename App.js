@@ -27,6 +27,8 @@ import Booster from "./src/Components/Home/HomeComponents/Booster";
 
 // -----------> Scanning Page
 import ScanRegisteredPerson from "./src/Components/Camera/ScanRegisteredPerson";
+import MatchScanRegisterPerson from "./src/Components/Camera/MatchScanRegisterPerson";
+import LivenessRecord from "./src/Components/Camera/LivenessRecord"
 
 
 
@@ -37,7 +39,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
 
-      <Stack.Screen name="ScanRegisteredPerson" component={ScanRegisteredPerson} />
+      <Stack.Screen name="LivenessRecord" component={LivenessRecord} />
 
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Signup" component={Signup} />
@@ -59,6 +61,10 @@ export default function App() {
         <Stack.Screen name="Vaccination" component={Vaccination} />
         <Stack.Screen name="AddCountry" component={AddCountry} />
         <Stack.Screen name="Booster" component={Booster} />
+
+        <Stack.Screen name="ScanRegisteredPerson" component={ScanRegisteredPerson} />
+        <Stack.Screen name="MatchScanRegisterPerson" component={MatchScanRegisterPerson} />
+        
         
         
 
