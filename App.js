@@ -28,7 +28,8 @@ import Booster from "./src/Components/Home/HomeComponents/Booster";
 // -----------> Scanning Page
 import ScanRegisteredPerson from "./src/Components/Camera/ScanRegisteredPerson";
 import MatchScanRegisterPerson from "./src/Components/Camera/MatchScanRegisterPerson";
-import LivenessRecord from "./src/Components/Camera/LivenessRecord"
+import LivenessRecord from "./src/Components/Camera/LivenessRecord";
+import PCRTestResult from "./src/Components/Camera/LivenessRecordResult/PCRTestResult";
 
 
 
@@ -64,6 +65,7 @@ export default function App() {
 
         <Stack.Screen name="ScanRegisteredPerson" component={ScanRegisteredPerson} />
         <Stack.Screen name="MatchScanRegisterPerson" component={MatchScanRegisterPerson} />
+        <Stack.Screen name="PCRTestResult" component={PCRTestResult} />
         
         
         
