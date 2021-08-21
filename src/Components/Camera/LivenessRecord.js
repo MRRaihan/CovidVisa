@@ -30,14 +30,15 @@ const LivenessRecord = ({navigation}, props) => {
                 .recordAsync()
                 .then((data) => {
                     navigation.navigate("PCRTestResult", {
-                        video: data.requestPermissionsAsync,
+                        // video: data.requestPermissionsAsync,
+                        video: data.uri,
                     })
                 })
                 .catch((err) => console.log(err));
         }else{
             try{
                 await camera.current.stopRecording();
-                setValues({ ...values, videoStatus:0, isFlashLightOn: Camera.Constants.FlashMode.off});
+                setValues({ ...values, videoStatus:0, isFlashLightOn: Camera.Constants.FlashMode.off,});
             }catch(err){
                 console.log(err);
             }

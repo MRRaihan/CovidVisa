@@ -31,7 +31,8 @@ import MatchScanRegisterPerson from "./src/Components/Camera/MatchScanRegisterPe
 import LivenessRecord from "./src/Components/Camera/LivenessRecord";
 import PCRTestResult from "./src/Components/Camera/LivenessRecordResult/PCRTestResult";
 
-
+// -----------> PCR Test Registration section
+import PCRTestRegistration from "./src/Components/Home/PCRTestRegistration/PCRTestRegistration";
 
 const Stack = createNativeStackNavigator();
 
@@ -40,7 +41,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
 
-      <Stack.Screen name="LivenessRecord" component={LivenessRecord} />
+        <Stack.Screen name="PCR Test Registration" component={PCRTestRegistration} />
+        <Stack.Screen name="LivenessRecord" component={LivenessRecord} />
 
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Signup" component={Signup} />
