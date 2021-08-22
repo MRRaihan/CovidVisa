@@ -23,6 +23,7 @@ import Antibody from "./src/Components/Home/HomeComponents/Antibody";
 import PCR from "./src/Components/Home/HomeComponents/PCR";
 import Vaccination from "./src/Components/Home/HomeComponents/Vaccination";
 import AddCountry from "./src/Components/Home/HomeComponents/AddCountry";
+import Synchronise from "./src/Components/Home/HomeComponents/Synchronise";
 import Booster from "./src/Components/Home/HomeComponents/Booster";
 
 // -----------> Scanning Page
@@ -40,7 +41,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-
+      <Stack.Screen name="AddCountry" component={AddCountry} />
         <Stack.Screen name="PCR Test Registration" component={PCRTestRegistration} />
         <Stack.Screen name="LivenessRecord" component={LivenessRecord} />
 
@@ -62,7 +63,8 @@ export default function App() {
         <Stack.Screen name="Antibody" component={Antibody} />
         <Stack.Screen name="PCR" component={PCR} />
         <Stack.Screen name="Vaccination" component={Vaccination} />
-        <Stack.Screen name="AddCountry" component={AddCountry} />
+        
+        <Stack.Screen name="Synchronise" component={Synchronise} />
         <Stack.Screen name="Booster" component={Booster} />
 
         <Stack.Screen name="ScanRegisteredPerson" component={ScanRegisteredPerson} />
