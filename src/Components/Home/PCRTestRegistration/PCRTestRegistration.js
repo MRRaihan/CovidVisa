@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Button, Dimensions, FlatList  } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Button, Dimensions, FlatList, ScrollView  } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 import MapView from 'react-native-maps';
 
@@ -12,8 +12,7 @@ const PCRTestRegistration = () => {
     
 
     return (
-        
-
+        <ScrollView>
             <View style={styles.container}>
             <View style={styles.firstView}>
                 <View style={styles.pickerAllItem}>
@@ -82,23 +81,23 @@ const PCRTestRegistration = () => {
                     </Picker>
                 </View>
 
-                <View style={{backgroundColor: "#d8d9e6", borderRadius: 10, padding: 5, flexDirection: "column"}}>
+                <View style={styles.MapArea}>
                     <Text style={{fontSize: 19, fontWeight: 'bold', marginTop: 10, marginBottom: 10}}>Location</Text>
-
                     <MapView style={styles.map} />
+                    
 
                 </View>
 
 
-                <View style={{ justifyContent: 'center', alignItems: 'center', marginLeft: "40%", width:"100%"}}>
+                <View style={{ justifyContent: 'center', alignItems: 'center', margin: 20, width:"100%"}}>
                     <Button title="Register"style={styles.button} />
                 </View>
-                
                 
                 
             </View>
 
         </View>
+    </ScrollView>
     
 
     )
@@ -125,20 +124,31 @@ const styles = StyleSheet.create({
         backgroundColor: "#d8d9e6",
         width: "100%",
     },
+    MapArea:{
+        backgroundColor: "#d8d9e6",
+        borderRadius: 10,
+        padding: 10,
+        flexDirection: "column",
+        height: 410,
+        width: "100%",
+        marginLeft: 10
+    },
+    
+    map: {
+        width: "100%",
+        height: 345,
+        borderRadius: 10
+
+    },
     button: {
         justifyContent: "center",
         alignItems: "center",
         margin: 10,
-        borderRadius: 10,
+        borderWidth: 1,
         height: 50,
         width: "100%",
-        marginBottom: 20,
+        margin: 20,
         elevation:3,
-        backgroundColor: "#3987ed"
-    },
-    map: {
-        width: Dimensions.get('window').width,
-        height: Dimensions.get('window').height,
     },
     // pickerItem:{
     //     borderRadius: 10,
