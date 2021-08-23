@@ -41,7 +41,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+      
       <Stack.Screen name="AddCountry" component={AddCountry} />
+      <Stack.Screen name="Synchronise" component={Synchronise} />
         <Stack.Screen name="PCR Test Registration" component={PCRTestRegistration} />
         <Stack.Screen name="LivenessRecord" component={LivenessRecord} />
 
@@ -64,7 +66,7 @@ export default function App() {
         <Stack.Screen name="PCR" component={PCR} />
         <Stack.Screen name="Vaccination" component={Vaccination} />
         
-        <Stack.Screen name="Synchronise" component={Synchronise} />
+        
         <Stack.Screen name="Booster" component={Booster} />
 
         <Stack.Screen name="ScanRegisteredPerson" component={ScanRegisteredPerson} />
