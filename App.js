@@ -35,6 +35,9 @@ import PCRTestResult from "./src/Components/Camera/LivenessRecordResult/PCRTestR
 // -----------> PCR Test Registration section
 import PCRTestRegistration from "./src/Components/Home/PCRTestRegistration/PCRTestRegistration";
 
+// ----------> Payment Method
+import PaymentMethod from "./src/Components/Home/PaymentMethod/PaymentMethod";
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -42,6 +45,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
       
+      <Stack.Screen name="Payment Method" component={PaymentMethod} />
+
       <Stack.Screen name="AddCountry" component={AddCountry} />
       <Stack.Screen name="Synchronise" component={Synchronise} />
         <Stack.Screen name="PCR Test Registration" component={PCRTestRegistration} />
