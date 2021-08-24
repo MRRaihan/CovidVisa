@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Button, Dimensions, FlatList,
 import {Picker} from '@react-native-picker/picker';
 import MapView from 'react-native-maps';
 
-const PCRTestRegistration = (props) => {
+const VaccineRegistration = (props) => {
     const [selectedFirstItem, setSelectedFirstItem] = useState();
     const [selectedSecondItem, setSelectedSecondItem] = useState();
     const [selectedThirdItem, setSelectedThirdItem] = useState();
@@ -90,8 +90,8 @@ const PCRTestRegistration = (props) => {
 
 
                 <View style={{ justifyContent: 'center', alignItems: 'center', margin: 20, width:"100%"}}>
-                    <Button title="Register & Exit"style={styles.button} onPress={() => {
-                        props.navigation.navigate("Payment Method");
+                    <Button title="Register & Exit"style={styles.button}  onPress={() => {
+                        props.navigation.navigate("Vaccine Payment Method");
                     }} />
                 </View>
                 
@@ -162,4 +162,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default PCRTestRegistration;
+export default VaccineRegistration;

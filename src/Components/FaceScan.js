@@ -1,43 +1,38 @@
 import * as React from "react";
 import { Avatar, Button, Card } from "react-native-paper";
-import { TouchableOpacity, StyleSheet, View } from "react-native";
+import { TouchableOpacity, StyleSheet, View, Text } from "react-native";
 import NID from "../../assets/images/face.png";
 
 const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
 
-const FaceScan = (props) => (
-  <View style={styles.container}>
-    <View style={styles.nidComment}>Place your face to take a clear photo</View>
-    <Card>
-      <Card.Cover style={styles.personNID} source={NID} />
-      <Card.Actions style={styles.nidActions}>
-        <TouchableOpacity>
-          <Button icon="swap-horizontal"></Button>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Button style={{ color: "primary" }} icon="camera"></Button>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Button icon="camera-retake-outline"></Button>
-        </TouchableOpacity>
-      </Card.Actions>
-    </Card>
-    <View>
-      <TouchableOpacity>
-        <Button
-          onPress={() => {
-            props.navigation.navigate("PersonaInfo");
-          }}
-          style={styles.nextActions}
-        >
-          {" "}
-          <View style={styles.nextActionsView}>Next</View>{" "}
-        </Button>
-      </TouchableOpacity>
+const FaceScan = (props) => {
+  return(
+    <View style={styles.container}>
+      <Text style={styles.nidComment}>Place your face to take a clear photo</Text>
+      <Card>
+        <Card.Cover style={styles.personNID} source={NID} />
+        <Card.Actions style={styles.nidActions}>
+          <TouchableOpacity>
+            <Button labelStyle={{ fontSize: 35 }} icon="swap-horizontal"/>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Button labelStyle={{ fontSize: 35 }} icon="camera"/>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Button labelStyle={{ fontSize: 35 }} icon="camera-retake-outline"/>
+          </TouchableOpacity>
+        </Card.Actions>
+        <View style={{ justifyContent: 'center', alignItems: 'center', width:"100%"}}>
+              <TouchableOpacity style={styles.button} onPress={() => {
+                  props.navigation.navigate("PersonaInfo");
+              }}>
+                  <Text style={{textAlign:"center", color: "white", fontSize: 20}}>Next</Text>
+              </TouchableOpacity>
+          </View>
+      </Card>
     </View>
-  </View>
-);
-
+  )
+}
 const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
@@ -53,24 +48,26 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   personNID: {
-    height: 150,
-    width: 350,
+    height:  210,
+    width: 330,
   },
   nidActions: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
   },
-  nextActions: {
+  button: {
+    backgroundColor: "#2a24c9",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 15,
-    color: "white",
-    backgroundColor: "blue",
-  },
-  nextActionsView: {
-    color: "white",
-  },
+    margin: 10,
+    borderWidth: 1,
+    height: 40,
+    width: "70%",
+    borderRadius: 10,
+    margin: 20,
+    elevation:3,
+}
 });
 
 export default FaceScan;

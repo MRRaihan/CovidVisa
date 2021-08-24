@@ -19,12 +19,20 @@ import UserProfile from "./src/Components/Home/UserProfile";
 import PersonalInfoEdit from "./src/Components/Home/PersonalInfoEdit";
 import NavigationTab from "./src/Components/navigationTab/NavigationTab";
 
-import Antibody from "./src/Components/Home/HomeComponents/Antibody";
-import PCR from "./src/Components/Home/HomeComponents/PCR";
-import Vaccination from "./src/Components/Home/HomeComponents/Vaccination";
-import AddCountry from "./src/Components/Home/HomeComponents/AddCountry";
+import Antibody from "./src/Components/Home/HomeComponents/Antibody/Antibody";
+import PCR from "./src/Components/Home/HomeComponents/PCR/PCR";
+import PCRProcess from "./src/Components/Home/HomeComponents/PCR/PCRProcess";
+import PCRPaymentMethod from "./src/Components/Home/HomeComponents/PCR/PCRPaymentMethod";
+import PCRLiveness from "./src/Components/Home/HomeComponents/PCR/PCRLiveness";
+import VaccineRegistration from "./src/Components/Home/HomeComponents/Vaccination/Vaccination";
+import VaccineProcess from "./src/Components/Home/HomeComponents/Vaccination/VaccineProcess";
+import VaccinePaymentMethod from "./src/Components/Home/HomeComponents/Vaccination/VaccinePaymentMethod";
+import VaccineLiveness from "./src/Components/Home/HomeComponents/Vaccination/VaccineLiveness";
+
+import AddCountry from "./src/Components/Home/HomeComponents/AddCountry/AddCountry";
 import Synchronise from "./src/Components/Home/HomeComponents/Synchronise";
-import Booster from "./src/Components/Home/HomeComponents/Booster";
+import Booster from "./src/Components/Home/HomeComponents/Booster/Booster";
+import BoosterPaymentMethod from "./src/Components/Home/HomeComponents/Booster/BoosterPaymentMethod";
 
 // -----------> Scanning Page
 import ScanRegisteredPerson from "./src/Components/Camera/ScanRegisteredPerson";
@@ -44,21 +52,17 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+      <Stack.Screen name="PersonaInfo" component={PersonInfo} />
       
-      <Stack.Screen name="Payment Method" component={PaymentMethod} />
-
-      <Stack.Screen name="AddCountry" component={AddCountry} />
-      <Stack.Screen name="Synchronise" component={Synchronise} />
-        <Stack.Screen name="PCR Test Registration" component={PCRTestRegistration} />
-        <Stack.Screen name="LivenessRecord" component={LivenessRecord} />
-
+      
+      
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="MobileOTP" component={MobileOTP} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="NIDScan" component={NIDScan} />
-        <Stack.Screen name="FaceScan" component={FaceScan} />
-        <Stack.Screen name="PersonaInfo" component={PersonInfo} />
+        <Stack.Screen name="Face Scan" component={FaceScan} />
+        
 
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="NavigationTab" component={NavigationTab} />
@@ -68,15 +72,31 @@ export default function App() {
         <Stack.Screen name="Personal Information" component={PersonalInfoEdit}/>
 
         <Stack.Screen name="Antibody" component={Antibody} />
+
         <Stack.Screen name="PCR" component={PCR} />
-        <Stack.Screen name="Vaccination" component={Vaccination} />
-        
+        <Stack.Screen name="PCR Process" component={PCRProcess} />
+        <Stack.Screen name="Payment Method" component={PCRPaymentMethod} />
+        <Stack.Screen name="Liveness" component={PCRLiveness}/>
+
+        <Stack.Screen name="Vaccine Registration" component={VaccineRegistration} />
+        <Stack.Screen name="Vaccine Process" component={VaccineProcess} />
+        <Stack.Screen name="Vaccine Payment Method" component={VaccinePaymentMethod} />
+        <Stack.Screen name="Vaccine Liveness" component={VaccineLiveness}/>
+
+        <Stack.Screen name="AddCountry" component={AddCountry} />
+        <Stack.Screen name="Synchronise" component={Synchronise} />
         
         <Stack.Screen name="Booster" component={Booster} />
+        <Stack.Screen name="Booster Payment Method" component={BoosterPaymentMethod} />
 
         <Stack.Screen name="ScanRegisteredPerson" component={ScanRegisteredPerson} />
         <Stack.Screen name="MatchScanRegisterPerson" component={MatchScanRegisterPerson} />
         <Stack.Screen name="PCRTestResult" component={PCRTestResult} />
+        <Stack.Screen name="PCR Test Registration" component={PCRTestRegistration} />
+        <Stack.Screen name="LivenessRecord" component={LivenessRecord} />
+
+
+        <Stack.Screen name="PaymentMethod1" component={PaymentMethod} />
         
         
         

@@ -58,16 +58,3 @@ const AntibodyData =[
 ];
 
 export default AntibodyData;
-
-
-// // Try to pass the value using mapping
-// {
-//                     NotificationData.map((val, ind) =>{
-//                     return <Card 
-//                               key={ind} 
-//                               title={val.title}
-//                               statusDetails={val.statusDetails}
-//                               time={val.time}
-//                               />
-//                     })
-//           }

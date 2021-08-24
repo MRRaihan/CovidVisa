@@ -99,7 +99,7 @@ const Home = (props) => (
           </View>
           <TouchableOpacity
             onPress={() => {
-              props.navigation.navigate("UserProfile");
+              props.navigation.navigate("PCR");
             }}
           >
             <Image style={styles.SliderImage} source={PCR} />
@@ -176,7 +176,7 @@ const Home = (props) => (
           </View>
           <TouchableOpacity
             onPress={() => {
-              props.navigation.navigate("ScanRegisteredPerson");
+              props.navigation.navigate("AddCountry");
             }}
           >
             <Image style={styles.SliderImage} source={AddCountry} />

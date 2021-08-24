@@ -1,8 +1,8 @@
 import React from "react";
 import { View, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { Card, Title, Paragraph } from "react-native-paper";
-import AntibodyData from "../MadeData/AntibodyData";
-import AntibodyLogo from "../../../../assets/images/Antibody.jpeg";
+import AntibodyData from "../../MadeData/AntibodyData";
+import AntibodyLogo from "../../../../../assets/images/Antibody.jpeg";
 
 const Antibody = () => {
   return (

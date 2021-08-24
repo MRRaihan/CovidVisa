@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Picker} from '@react-native-picker/picker';
 import RadioGroup from 'react-native-radio-buttons-group';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import DocumentPicker from 'react-native-document-picker';
@@ -13,8 +14,9 @@ const radioButtonsData = [{
     label: 'No'
 }]
 
-const PersonInfo = (props) => {
 
+const PersonInfo = (props) => {
+            const [selectedItem, setSelectedItem] = useState();
           //Date and Time
           const [hidePassword, setHidePassword ] = useState(true);
           const [show, setShow] = useState(false);
@@ -49,27 +51,6 @@ const PersonInfo = (props) => {
                     setShow(true);
           };
           
-          // Pick a single file
-          //  async openDocumentFile(){
-          //     try {
-          //     const res = await DocumentPicker.pick({
-          //       type: [DocumentPicker.types.allFiles],
-          //     });
-          //     console.log(
-          //       res.uri,
-          //       res.type, // mime type
-          //       res.name,
-          //       res.size
-          //     );
-          //   } catch (err) {
-          //     if (DocumentPicker.isCancel(err)) {
-          //       // User cancelled the picker, exit any dialogs or menus and move on
-          //     } else {
-          //       throw err;
-          //     }
-          //   }
-          // }
-          
           return (
                     <View style={styles.container}>
                               
@@ -97,14 +78,19 @@ const PersonInfo = (props) => {
                                         multiline={true}
                               />
                               <View style={styles.radioButtonContainer}>
-                                    <View>Were you affected COVID-19 before?</View>
-                                  <RadioGroup style={styles.radioButton}
-                                      radioButtons={radioButtons} 
-                                      onPress={onPressRadioButton} 
-                                />
+                                    <Text>Were you affected COVID-19 before?</Text>
+                                    <Picker
+                                      selectedValue={selectedItem}
+                                      onValueChange={(itemValue, itemIndex) =>
+                                          setSelectedItem(itemValue)
+                                  }>
+                                      <Picker.Item label="Yes" value="Yes" />
+                                      <Picker.Item label="No" value="No" />
+                                  </Picker>
                           </View>
                           
                           <TextInput style={styles.inputField} placeholder="Insert your Covid-19 recovery date" />
+                          
 
                             <TouchableOpacity  style={styles.attachedFile} 
                                 onPress={() => this.openDocumentFile()}
@@ -112,9 +98,13 @@ const PersonInfo = (props) => {
                                 <TextInput placeholder="Attached your file" />
                             </TouchableOpacity>
 
-                          <Button style={styles.nextBTN} title="Next" onPress={()=>{
-                                        props.navigation.navigate("Home")
-                              }}/>
+                            <View style={{ justifyContent: 'center', alignItems: 'center', width:"100%"}}>
+                              <TouchableOpacity style={styles.button} onPress={() => {
+                                  props.navigation.navigate("Face Scan");
+                              }}>
+                                  <Text style={{textAlign:"center", color: "white", fontSize: 20}}>Next</Text>
+                              </TouchableOpacity>
+                          </View>
 
                     </View>
           );
@@ -131,27 +121,24 @@ const styles = StyleSheet.create({
                     width: "80%", 
                     backgroundColor: "#e3e8e5",
                     borderRadius: 20,
-                    borderBottomWidth: 1, 
                     borderColor: "gray", 
-                    padding: 7,
+                    padding: 15,
                     marginTop: 10
           },
           attachedFile:{
                     width: "80%", 
                     backgroundColor: "#e3e8e5",
                     borderRadius: 20,
-                    borderBottomWidth: 1, 
                     borderColor: "gray", 
-                    padding: 7,
+                    padding: 15,
                     marginTop: 10,
                     marginBottom: 10
           },
           textArea: {
                     borderRadius: 20,
-                    borderBottomWidth: 1,
                     backgroundColor: "#e3e8e5",
                     marginTop: 10,
-                    padding: 5,
+                    padding: 15,
                     borderColor: "gray",
                     width: "80%", 
                     height: 100,
@@ -161,15 +148,26 @@ const styles = StyleSheet.create({
               
               borderRadius: 20,
               borderColor: "gray",
-              borderBottomWidth: 1,
               backgroundColor: "#e3e8e5",
               backgroundColor: "#e3e8e5",
-              flexDirection: 'column',
-              justifyContent: 'center',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
               alignItems: 'center',
               width: "80%", 
+              padding: 15,
               marginTop: 10,
-            }
+            },
+            button: {
+              backgroundColor: "#2a24c9",
+              justifyContent: "center",
+              alignItems: "center",
+              margin: 10,
+              height: 40,
+              width: "70%",
+              borderRadius: 10,
+              margin: 20,
+              elevation:3,
+          },
 
 })
 export default PersonInfo;
