@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
+import {ScrollView} from 'react-native';
 // formik
 import {Formik} from 'formik';
 // icons
@@ -18,7 +19,8 @@ const Signup = (props) => {
           const [show, setShow] = useState(false);
 
           return (
-                    <StyledContainer>
+              <ScrollView>
+                  <StyledContainer>
                               <StatusBar style="dark" />
                               <InnerContainer>
                                         <PageLogo resizeMode="cover" source={require('../../assets/images/logo.png')} />
@@ -112,6 +114,8 @@ const Signup = (props) => {
 
                               </InnerContainer>
                     </StyledContainer>
+              </ScrollView>
+                    
           );
 }
 

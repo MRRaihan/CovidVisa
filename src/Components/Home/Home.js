@@ -6,12 +6,14 @@ import {
   View,
   Text,
   Image,
-  FlatList,
+  ScrollView,
 } from "react-native";
 
 import Slider from "../../../assets/images/Cslider.jpeg";
-import Antibody from "../../../assets/images/CAntibody.jpeg";
-import PCR from "../../../assets/images/CPCR.jpeg";
+// import Antibody from "../../../assets/images/CAntibody.jpeg";
+import Antibody from "../../../assets/images/battery.png";
+
+import PCR from "../../../assets/images/done.png";
 import Vaccination from "../../../assets/images/Vaccination_200x100.jpeg";
 import AddCountry from "../../../assets/images/CAddCountry.jpeg";
 import Booster from "../../../assets/images/CBooster.jpeg";
@@ -21,7 +23,7 @@ import NavigationTab from "../navigationTab/NavigationTab";
 const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
 
 const Home = (props) => (
-  // <FlatList>
+  <ScrollView>
   <View style={styles.container}>
     <Card style={styles.Slider}>
       <Card.Cover style={styles.SliderImage} source={Slider} />
@@ -34,6 +36,7 @@ const Home = (props) => (
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "center",
+          margin: 10
         }}
       >
         <Card style={styles.dataFlex}>
@@ -43,8 +46,8 @@ const Home = (props) => (
                 alignItems: "center",
                 flex: 1,
                 justifyContent: "center",
-                padding: 5,
-                marginRight: 10,
+                marginTop: 9,
+                fontSize: 14
               }}
             >
               Antibody
@@ -55,14 +58,13 @@ const Home = (props) => (
                 style={{
                   alignItems: "center",
                   flex: 1,
-                  justifyContent: "center",
-                  padding: 5,
-                  marginLeft: 0,
+                  justifyContent: "space-between",
                 }}
                 icon="information-outline"
               />
             </TouchableOpacity>
           </View>
+          <View>
           <TouchableOpacity
             onPress={() => {
               props.navigation.navigate("Antibody");
@@ -70,6 +72,7 @@ const Home = (props) => (
           >
             <Image style={styles.SliderImage} source={Antibody} />
           </TouchableOpacity>
+          </View>
         </Card>
         <Card style={styles.dataFlex}>
           <View style={styles.CardInsideTitle}>
@@ -79,7 +82,8 @@ const Home = (props) => (
                 flex: 1,
                 justifyContent: "center",
                 padding: 5,
-                marginRight: 10,
+                fontSize: 14,
+                marginTop: 9,
               }}
             >
               PCR
@@ -112,6 +116,7 @@ const Home = (props) => (
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "center",
+          marginBottom: 10
         }}
       >
         <Card style={styles.dataFlex}>
@@ -121,8 +126,9 @@ const Home = (props) => (
                 alignItems: "center",
                 flex: 1,
                 justifyContent: "center",
-                padding: 5,
-                marginRight: 0,
+                marginTop: 12,
+                fontSize: 14,
+
               }}
             >
               Vaccination
@@ -142,7 +148,7 @@ const Home = (props) => (
           </View>
           <TouchableOpacity
             onPress ={() =>{
-                  props.navigation.navigate("Notification")
+                  props.navigation.navigate("Vaccine Registration")
               }}
           >
             <Image style={styles.SliderImage} source={Vaccination} />
@@ -155,8 +161,8 @@ const Home = (props) => (
                 alignItems: "center",
                 flex: 1,
                 justifyContent: "center",
-                padding: 5,
-                marginRight: 0,
+                marginTop: 12,
+                fontSize: 14,
               }}
             >
               Add Country
@@ -198,8 +204,8 @@ const Home = (props) => (
                 alignItems: "center",
                 flex: 1,
                 justifyContent: "center",
-                padding: 5,
-                marginRight: 20,
+                marginTop: 12,
+                fontSize: 14,
               }}
             >
               Booster
@@ -228,7 +234,7 @@ const Home = (props) => (
       </View>
     </View>
   </View>
-  // </FlatList>
+ </ScrollView>
 );
 
 const styles = StyleSheet.create({
@@ -236,8 +242,8 @@ const styles = StyleSheet.create({
     // flexDirection: 'column',
     justifyContent: "center",
     alignItems: "center",
-    height: "100%",
     width: "100%",
+    marginBottom: 20
   },
   Slider: {
     height: 5,
@@ -246,7 +252,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   HelthTitle: {
-    fontSize: 20,
+    fontSize: 22,
     marginBottom: 20,
   },
   healthData: {
@@ -256,8 +262,9 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     flexDirection: "column",
     padding: 10,
-    borderColor: "#e6ebe7",
     margin: 5,
+    height: "100%",
+    width: "49%"
   },
   CardInsideTitle: {
     flexDirection: "row",
@@ -265,8 +272,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   SliderImage: {
-    height: 55,
-    width: "100%",
+    height: 65,
+    width: "90%",
   },
   //           nidComment:{
   //               color: 'gray',

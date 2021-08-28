@@ -4,7 +4,8 @@ import {Camera } from 'expo-camera';
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import {Audio} from "expo-av";
 
-const LivenessRecord = ({navigation}, props) => {
+
+const LivenessRecord = (props) => {
     const camera = useRef(null);
     const[values, setValues] = useState({
         hasPermission:[],
@@ -13,7 +14,7 @@ const LivenessRecord = ({navigation}, props) => {
         videoStatus: 0
 
     })
-    const {hasPermission, cameraType, isFlashLightOn, videoStatus} = values;
+    const {hasPermission, cameraType, isFlashLightOn} = values;
 
     useEffect(() => {
         getPermissions();
@@ -30,8 +31,8 @@ const LivenessRecord = ({navigation}, props) => {
                 .recordAsync()
                 .then((data) => {
                     navigation.navigate("PCRTestResult", {
-                        // video: data.requestPermissionsAsync,
-                        video: data.uri,
+                        video: data.requestPermissionsAsync,
+                        // video: data.uri,
                     })
                 })
                 .catch((err) => console.log(err));

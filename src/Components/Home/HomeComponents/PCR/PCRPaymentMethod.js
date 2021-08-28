@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, TouchableOpacity, Image } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
 import { Card, Title, Paragraph } from "react-native-paper";
 import PCRPaymentData from "./PCRPaymentData";
 
@@ -45,9 +45,9 @@ const PCRPaymentMethod = (props) => {
       })}
       <View style={{ justifyContent: 'center', alignItems: 'center', width:"100%"}}>
             <TouchableOpacity style={styles.button} onPress={() => {
-                props.navigation.navigate("PCR Process");
+                props.navigation.navigate("PCR Date Status");
             }}>
-                <View style={{textAlign:"center", color: "white", fontSize: 20}}>Make Payment</View>
+                <Text style={{textAlign:"center", color: "white", fontSize: 20}}>Make Payment</Text>
             </TouchableOpacity>
         </View>
     </View>
@@ -71,13 +71,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "space-between",
     flexDirection: "row",
+    marginTop: 200,
   },
   testContents: {
     flex: 1,
     justifyContent: "space-between",
     flexDirection: "row",
     paddingTop: 5,
-    marginTop: 5
   },
   testStartItem: {
     justifyContent: "flex-start",
@@ -90,10 +90,9 @@ const styles = StyleSheet.create({
   button: {
     justifyContent: "center",
     alignItems: "center",
-    margin: 10,
-    height: 50,
+    height: 70,
     width: "90%",
-    margin: 20,
+    marginBottom: 250,
     backgroundColor: "#224fe3",
     borderRadius: 10
 },

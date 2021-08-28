@@ -100,7 +100,7 @@ const PersonInfo = (props) => {
 
                             <View style={{ justifyContent: 'center', alignItems: 'center', width:"100%"}}>
                               <TouchableOpacity style={styles.button} onPress={() => {
-                                  props.navigation.navigate("Face Scan");
+                                  props.navigation.navigate("Home");
                               }}>
                                   <Text style={{textAlign:"center", color: "white", fontSize: 20}}>Next</Text>
                               </TouchableOpacity>

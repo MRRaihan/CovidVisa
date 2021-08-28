@@ -7,7 +7,7 @@ const StatusBarHeight = Constants.statusBarHeight;
 //colors
 export const Colors={
           primary: '#ffffff',
-          secondary: '$E5E7EB',
+          secondary: '#E5E7EB',
           tertiary: '#1F2937',
           darkLight: '#9CA3AF',
           brand: '#6D28D9',
@@ -22,7 +22,7 @@ export const StyledContainer = styled.View`
           flex: 1;
           padding: 25px;
           padding-top: ${StatusBarHeight + 10}px;
-          backgroundColor: ${primary};
+          background-color: ${primary};
 `;
 
 export const InnerContainer= styled.View`
@@ -96,17 +96,17 @@ export const StyledFromArea = styled.View`
 `;
 
 export const StyledTextInput = styled.TextInput`
-          backgroundColor: ${secondary};
-          padding: 15px;
-          padding-left: 55px;
-          padding-right: 55px;
-          border-radius: 5px;
-          border: ${tertiary};
-          font-size: 16px;
-          height: 60px;
-          marginVertical: 3px;
-          margin-bottom: 10px;
-          border-color: ${secondary};
+        background-color: ${secondary};
+        padding: 15px;
+        padding-left: 55px;
+        padding-right: 55px;
+        border-radius: 5px;
+        border: ${tertiary};
+        font-size: 16px;
+        height: 60px;
+        marginVertical: 3px;
+        margin-bottom: 10px;
+        border-color: ${secondary};
 `;
 
 export const StyledInputLabel = styled.Text`
@@ -131,7 +131,7 @@ export const RightIcon = styled.TouchableOpacity`
 
 export const StyledButton = styled.TouchableOpacity`
           padding: 15px;
-          backgroundColor: ${blue};
+          background-color: ${blue};
           justify-content: center;
           align-items: center;
           border-radius: 5px;

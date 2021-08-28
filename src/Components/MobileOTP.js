@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {TextInput} from "react-native-gesture-handler";
 import { Button} from 'react-native-paper';
-import { View, Text, StyleSheet, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, KeyboardAvoidingView, TouchableOpacity, Text } from 'react-native';
 
 
 const MobileOTP= (props) =>{
@@ -62,8 +62,9 @@ const MobileOTP= (props) =>{
                               behavior={'padding'}
                               styles={styles.containerAvoidingView}
                     >
-
-                              <Text style={styles.titleStyle}>{"Code is sent ot +8801700000000"}</Text>
+                              <View>
+                                <Text style={styles.titleStyle}>Code is sent to +8801700000000</Text>
+                              </View>
 
                               <View>
                                         <TextInput

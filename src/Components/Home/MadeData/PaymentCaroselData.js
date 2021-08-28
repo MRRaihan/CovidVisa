@@ -4,7 +4,9 @@ import { View, Text } from 'react-native'
 const PaymentCaroselData = () => {
     return (
         <View>
-            <Text></Text>
+            <Text>
+
+            </Text>
         </View>
     )
 }

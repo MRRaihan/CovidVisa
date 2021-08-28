@@ -84,8 +84,6 @@ const VaccineRegistration = (props) => {
                 <View style={styles.MapArea}>
                     <Text style={{fontSize: 19, fontWeight: 'bold', marginTop: 10, marginBottom: 10}}>Location</Text>
                     <MapView style={styles.map} />
-                    
-
                 </View>
 
 

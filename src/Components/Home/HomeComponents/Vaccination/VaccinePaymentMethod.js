@@ -47,7 +47,7 @@ const VaccinePaymentMethod = (props) => {
         })}
         <View style={{ justifyContent: 'center', alignItems: 'center', width:"100%"}}>
               <TouchableOpacity style={styles.button} onPress={() => {
-                  props.navigation.navigate("Vaccine Process");
+                  props.navigation.navigate("Vaccine Date Status");
               }}>
                   <Text style={{textAlign:"center", color: "white", fontSize: 20}}>Make Payment</Text>
               </TouchableOpacity>
@@ -93,7 +93,6 @@ const styles = StyleSheet.create({
   button: {
     justifyContent: "center",
     alignItems: "center",
-    
     height: 70,
     width: "90%",
     marginBottom: 70,

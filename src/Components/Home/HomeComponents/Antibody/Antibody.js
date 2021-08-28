@@ -1,8 +1,8 @@
 import React from "react";
-import { View, StyleSheet, TouchableOpacity, Image } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Image, ScrollView } from "react-native";
 import { Card, Title, Paragraph } from "react-native-paper";
 import AntibodyData from "../../MadeData/AntibodyData";
-import AntibodyLogo from "../../../../../assets/images/Antibody.jpeg";
+import AntibodyLogo from "../../../../../assets/images/battery.png";
 
 const Antibody = () => {
   return (
@@ -12,7 +12,7 @@ const Antibody = () => {
       </View>
       {AntibodyData.map((val, ind) => {
         return (
-          <Card style={styles.cardStyle}>
+            <Card style={styles.cardStyle}>
             <Card.Content>
               <Title>{val.title}</Title>
               <View
@@ -49,6 +49,7 @@ const Antibody = () => {
               </View>
             </Card.Content>
           </Card>
+          
         );
       })}
     </View>
@@ -63,23 +64,26 @@ const styles = StyleSheet.create({
     alignItems: "center",
     height: "100%",
     width: "100%",
+    paddingBottom: 40
   },
   cardStyle: {
     backgroundColor: "white",
-    width: "80%",
-    height: "auto",
+    width: "90%",
+    height: 230
   },
   testContents: {
     flex: 1,
     justifyContent: "space-between",
     flexDirection: "row",
     paddingTop: 5,
+    height: 40
   },
   testStartItem: {
     justifyContent: "flex-start",
   },
   testEndItem: {
     justifyContent: "flex-end",
+    marginTop: 150
   },
   AntibodyLogo: {
     justifyContent: "center",

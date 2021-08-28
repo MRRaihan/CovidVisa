@@ -7,6 +7,7 @@ import {Octicons, Ionicons, Fontisto } from '@expo/vector-icons';
 
 import { StyledContainer, InnerContainer, PageLogo, PageTitle, SubTitle, StyledFromArea, LeftIcon, RightIcon, StyledInputLabel, StyledTextInput, Colors, StyledText, StyledButton, ButtonText, MsgBox, Line, ExtraView, ExtraText, TextLink, TextLinkContent } from '../Style/Styles';
 
+
 //Colors
 const {brand, darkLight, primary} = Colors;
 
