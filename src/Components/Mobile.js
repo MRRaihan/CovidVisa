@@ -7,11 +7,12 @@ import { View, StyleSheet, KeyboardAvoidingView, TouchableOpacity, Text } from '
 const MobileOTP= (props) =>{
           const lengthInput = 6;
           const defaultCountdown = 30;
-          let clockCall= null;    
+          let clockCall= null;
           let textInput = useRef(null);
           const [internalVal, setInternalVal] = useState("");
           const [countdown, setCountdown] = useState(defaultCountdown);
           const [enableResend, setEnableResend] = useState(false);
+
           useEffect(() => {
                     clockCall = setInterval(() => {
                               decrementClock();
@@ -20,7 +21,7 @@ const MobileOTP= (props) =>{
                               clearInterval(clockCall);
                     }
           })
-          const decrementClock = () =>{12
+          const decrementClock = () =>{
                     if(countdown === 0){
                               setEnableResend(true)
                               setCountdown(0)
@@ -61,58 +62,68 @@ const MobileOTP= (props) =>{
                               behavior={'padding'}
                               styles={styles.containerAvoidingView}
                     >
-                      
-                                <Text style={styles.titleStyle}>Code is sent to <Text style={styles.titleNumberStyle}>+8801700000000</Text></Text>
+                              <View>
+                                <Text style={styles.titleStyle}>Code is sent to +8801700000000</Text>
+                              </View>
 
                               <View>
-                                <TextInput
-                                  ref={(input) => textInput = input}
-                                  onChangeText={onChangeText}
-                                  style={{width: 0, height: 0}}
-                                  value={internalVal}
-                                  maxLength={lengthInput}
-                                  returnKeyType="done"
-                                  keyboardType="numeric"
-                                />
-                                <View style={styles.containerInput}>
-                                {
-                                  Array(lengthInput).fill().map((data, index) =>(
-                                        <View key={index} style={[styles.cellView,
-                                            {
-                                              borderBottomColor: index === internalVal.length ? '#FB6CA6' : '#234DB7'
-                                            }
-                                          ]}>
-                                          <Text style={styles.cellText}
-                                                  onPress={() => textInput.focus()}
-                                              >
-                                                {internalVal && internalVal.length > 0 ? internalVal[index] : ""}
-                                              </Text>
-                                            </View>
-                                          ))
+                                        <TextInput
+                                                  ref={(input) => textInput = input}
+                                                  onChangeText={onChangeText}
+                                                  style={{width: 0, height: 0}}
+                                                  value={internalVal}
+                                                  maxLength={lengthInput}
+                                                  returnKeyType="done"
+                                                  keyboardType="numeric"
+                                        />
+                                        <View style={styles.containerInput}>
+                                        {
+                                                  Array(lengthInput).fill().map((data, index) =>(
+                                                            <View 
+                                                            key={index}
+                                                            style={[styles.cellView,
+                                                                      {
+                                                                                borderBottomColor: index === internalVal.length ? '#FB6CA6' : '#234DB7'
+                                                                      }
+                                                            ]} 
+                                                            
+                                                                      
+                                                            >
+                                                                      <Text 
+                                                                                style={styles.cellText}
+                                                                                onPress={() => textInput.focus()}
+                                                                      >
+                                                                                {internalVal && internalVal.length > 0 ? internalVal[index] : ""}
+                                                                      </Text>
+                                                            </View>
+                                                  ))
                                         }
-                                   </View>
+                                        </View>
                               </View>
                               <View style={styles.bottomView}>
-                                <TouchableOpacity onPress={onResendOTP}>
-                                  <View style={styles.btnResend} >
-                                      <Text style={styles.textResend}>
-                                        Didn't receive any code?
-                                      </Text>
-                                  </View>
-                                </TouchableOpacity>
-                                <TouchableOpacity onPress={onChangeNumber}>
-                                  <View style={styles.btnChangeNumber} >
-                                    <Text style={styles.textChange} >Send again</Text>
-                                  </View>
-                                </TouchableOpacity>   
+                                        
+                                        <TouchableOpacity onPress={onResendOTP}>
+                                                  <View style={styles.btnResend} >
+                                                            <Text 
+                                                                      style={styles.textResend}
+                                                            >
+                                                                      Didn't receive any code?
+                                                            </Text>
+                                                  </View>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity onPress={onChangeNumber}>
+                                                  <View style={styles.btnChangeNumber} >
+                                                            <Text style={styles.textChange} >Send again</Text>
+                                                  </View>
+                                        </TouchableOpacity>
+                                        
                               </View>
                               <View style={styles.container}>
-                                <TouchableOpacity onPress={()=>{
-                                          props.navigation.navigate("Login")
-                                          }}  style={styles.otpButton}
-                                > 
-                                          <Text style={styles.otpButtonView}>Verify & Continue</Text>
-                                </TouchableOpacity>
+                                        <TouchableOpacity>
+                                                  <Button onPress={()=>{
+                                                            props.navigation.navigate("Login")
+                                                  }}  style={styles.otpButton}> <View style={styles.otpButtonView}>Verify & Continue</View> </Button>
+                                        </TouchableOpacity>
                               </View>
                               
                     </KeyboardAvoidingView>
@@ -133,16 +144,10 @@ const styles = StyleSheet.create({
                     padding: 10,
           },
           titleStyle: {
-                    marginTop: 300,
-                    fontSize: 20,
+                    marginBottom: 50,
+                    marginTop: 50,
+                    fontSize: 16,
                     textAlign: 'center'
-          },
-          titleNumberStyle: {
-            marginTop: 200,
-            fontSize: 20,
-            textAlign: 'center',
-            color: "#0814bf"
-
           },
           containerInput:{
                     flexDirection: 'row',
@@ -175,7 +180,6 @@ const styles = StyleSheet.create({
                     height: 'auto',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    marginTop: 25
                     
           },
           textChange:{
@@ -195,20 +199,14 @@ const styles = StyleSheet.create({
                     fontSize: 15
           },
           otpButton:{
-            backgroundColor: "#2a24c9",
-            justifyContent: "center",
-            alignItems: "center",
-            marginBottom: 800,
-            borderWidth: 1,
-            height: 50,
-            width: "80%",
-            borderRadius: 10,
-            margin: 20,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    backgroundColor: 'blue',
+                    marginTop: -60,
+                    width: 200
           },
           otpButtonView:{
-            color: "white",
-            fontSize: 20
-
+                    color: "white",
           }
 })
 

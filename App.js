@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Welcome from "./src/Components/Welcome";
 import Signup from "./src/Accounts/Signup";
 import MobileOTP from "./src/Components/MobileOTP";
+// import Mobile from "./src/Components/Mobile";
 import Login from "./src/Accounts/Login";
 import NIDScan from "./src/Components/NIDScan";
 import FaceScan from "./src/Components/FaceScan";
@@ -19,8 +20,10 @@ import UserProfile from "./src/Components/Home/UserProfile";
 import PersonalInfoEdit from "./src/Components/Home/PersonalInfoEdit";
 import NavigationTab from "./src/Components/navigationTab/NavigationTab";
 
-import Antibody from "./src/Components/Home/HomeComponents/Antibody/Antibody";
+// import Antibody from "./src/Components/Home/HomeComponents/Antibody/Antibody";
 import AntibodyScroll from "./src/Components/Home/HomeComponents/Antibody/AntibodyScroll";
+
+import CheckGallery from "./src/Components/Home/HomeComponents/PCR/CheckGallery";
 
 import PCR from "./src/Components/Home/HomeComponents/PCR/PCR";
 import PCRDateLeft from "./src/Components/Home/HomeComponents/PCR/PCRLeftDate";
@@ -60,7 +63,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-         
+        
+      <Stack.Screen name="Payment Method" component={PCRPaymentMethod} />
+      <Stack.Screen name="CheckGallery" component={CheckGallery  } />
+
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="MobileOTP" component={MobileOTP} />
@@ -79,7 +85,7 @@ export default function App() {
         <Stack.Screen name="Antibody" component={AntibodyScroll} />
         <Stack.Screen name="PersonaInfo" component={PersonInfo} />
         <Stack.Screen name="PCR" component={PCR} />
-        <Stack.Screen name="Payment Method" component={PCRPaymentMethod} />
+        
         <Stack.Screen name="PCR Date Status" component={PCRDateLeft} />
         <Stack.Screen name="PCR Process" component={PCRProcess} />
         <Stack.Screen name="Liveness" component={PCRLiveness}/>
