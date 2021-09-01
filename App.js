@@ -54,6 +54,7 @@ import PCRTestRegistration from "./src/Components/Home/PCRTestRegistration/PCRTe
 // ----------> Payment Method
 import PaymentMethod from "./src/Components/Home/PaymentMethod/PaymentMethod";
 
+import Artboard from "./src/Components/Home/Artboard";
 
 import Liveness from "./src/Components/Camera/LivenessRecord";
 
@@ -63,10 +64,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        
-      <Stack.Screen name="Payment Method" component={PCRPaymentMethod} />
-      <Stack.Screen name="CheckGallery" component={CheckGallery  } />
 
+        <Stack.Screen name="Artboard" component={Artboard} />
+        
+        
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="MobileOTP" component={MobileOTP} />
@@ -84,8 +85,9 @@ export default function App() {
 
         <Stack.Screen name="Antibody" component={AntibodyScroll} />
         <Stack.Screen name="PersonaInfo" component={PersonInfo} />
+
         <Stack.Screen name="PCR" component={PCR} />
-        
+        <Stack.Screen name="Payment Method" component={PCRPaymentMethod} />
         <Stack.Screen name="PCR Date Status" component={PCRDateLeft} />
         <Stack.Screen name="PCR Process" component={PCRProcess} />
         <Stack.Screen name="Liveness" component={PCRLiveness}/>
@@ -108,8 +110,10 @@ export default function App() {
         <Stack.Screen name="PCR Test Registration" component={PCRTestRegistration} />
         <Stack.Screen name="LivenessRecord" component={LivenessRecord} />
 
+        
 
         <Stack.Screen name="PaymentMethod1" component={PaymentMethod} />
+        <Stack.Screen name="CheckGallery" component={CheckGallery  } />
         
         
         

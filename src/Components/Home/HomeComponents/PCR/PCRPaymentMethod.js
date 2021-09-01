@@ -32,26 +32,27 @@ const PCRPaymentMethod = (props) => {
                     style={{
                       borderBottomColor: "#e8e2e1",
                       borderBottomWidth: 2,
-                      marginTop: 35
+                      marginBottom: 5
                     }}
                   />
-
                   <View style={styles.testContents}>
                     <View style={styles.testStartItem}>
                         <Paragraph style={{fontSize: 17}}>{val.pcrTestFee}</Paragraph>
                         <Paragraph style={{fontSize: 17}}>{val.covidCharge}</Paragraph>
-                        <Paragraph style={{fontWeight: 'bold', fontSize: 17}}>{val.totalCost}</Paragraph>
+                        <Paragraph style={{fontWeight: 'bold', fontSize: 18, marginTop: 10}}>{val.totalCost}</Paragraph>
                     </View>
                     <View style={styles.testEndItem}>
                         <Paragraph style={{fontSize: 17}}>{val.pcrTestAmount}</Paragraph>
                         <Paragraph style={{fontSize: 17}}>{val.covidChargeAmount}</Paragraph>
-                        <Paragraph style={{fontWeight: 'bold', fontSize: 17}}>{val.totalCostValue}</Paragraph>
+                        <Paragraph style={{fontWeight: 'bold', fontSize: 18, marginTop: 10}}>{val.totalCostValue}</Paragraph>
                     </View>
-
-                      <Card style={styles.PaymentCardSize}>
-                        <PaymentCard />
-                      </Card>
                   </View>
+                  <View>
+                    <Card style={styles.PaymentCardSize}>
+                      <PaymentCard />
+                    </Card>
+                  </View>
+                  
                   <View style={{justifyContent: "space-between", marginTop: -200}}>
                     <TextInput
                       style={styles.input}
@@ -83,16 +84,17 @@ const PCRPaymentMethod = (props) => {
                     </View>
                   </View>
                 </Card.Content>
+                <View style={{ justifyContent: 'center', alignItems: 'center', width:"100%", marginTop: 30}}>
+            <TouchableOpacity style={styles.button} onPress={() => {
+                props.navigation.navigate("PCR Date Status");
+            }}>
+                <Text style={{textAlign:"center", color: "white", fontSize: 20}}>Make Payment</Text>
+            </TouchableOpacity>
+          </View>
               </Card>
             );
           })}
-          <View style={{ justifyContent: 'center', alignItems: 'center', width:"100%", marginBottom: 110}}>
-                <TouchableOpacity style={styles.button} onPress={() => {
-                    props.navigation.navigate("PCR Date Status");
-                }}>
-                    <Text style={{textAlign:"center", color: "white", fontSize: 20}}>Make Payment</Text>
-                </TouchableOpacity>
-            </View>
+          
         </SafeAreaView>
         </View>
     </ScrollView>
@@ -138,9 +140,7 @@ const styles = StyleSheet.create({
   PaymentCardSize:{
     width: "100%",
     height: 100,
-    marginLeft: -400,
-    marginTop: 120,
-    marginBottom: 20,
+    marginTop: 40,
   },
   button: {
     justifyContent: "center",
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
   ccvInput: {
     height: 60,
     marginTop: 12,
-    width: "45%",
+    width: "37%",
     padding: 20,
     fontSize: 20,
     backgroundColor: "#e9ecf0",
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
   dateInputDetails:{
     height: 60,
     padding: 20,
-    width: "50%",
+    width: "60%",
     marginTop: 10,
     fontSize: 20,
     backgroundColor: "#e9ecf0",

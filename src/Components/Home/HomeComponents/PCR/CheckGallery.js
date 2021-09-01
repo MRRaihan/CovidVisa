@@ -24,7 +24,7 @@ class CheckGallery extends Component {
                     style={styles.Image}
                     images={this.state.images}
                     onCurrentImagePressed={index =>
-                        console.warn(`image ${index} pressed`)
+                        console.warn(`Card ${index} pressed`)
                     }
                     />
                 </TouchableOpacity>
