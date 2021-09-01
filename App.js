@@ -66,11 +66,6 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-      
-      
-      <Stack.Screen name="NavigationTab" component={NavigationTab} />
-        <Stack.Screen name="Artboard" component={Artboard} />
-        
         
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Signup" component={Signup} />
@@ -80,7 +75,7 @@ export default function App() {
         <Stack.Screen name="Face Scan" component={FaceScan} />
         <Stack.Screen name="Home" component={Home} />
 
-        
+        <Stack.Screen name="NavigationTab" component={NavigationTab} />
         
         <Stack.Screen name="Scan" component={Scan} />
         <Stack.Screen name="Notification" component={Notification} />
@@ -115,6 +110,7 @@ export default function App() {
         <Stack.Screen name="LivenessRecord" component={LivenessRecord} />
 
         
+        <Stack.Screen name="Artboard" component={Artboard} />
 
         <Stack.Screen name="PaymentMethod1" component={PaymentMethod} />
         <Stack.Screen name="CheckGallery" component={CheckGallery  } />
