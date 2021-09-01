@@ -20,6 +20,8 @@ import UserProfile from "./src/Components/Home/UserProfile";
 import PersonalInfoEdit from "./src/Components/Home/PersonalInfoEdit";
 import NavigationTab from "./src/Components/navigationTab/NavigationTab";
 
+
+import Profile from "./src/Components/Home/Profile";
 // import Antibody from "./src/Components/Home/HomeComponents/Antibody/Antibody";
 import AntibodyScroll from "./src/Components/Home/HomeComponents/Antibody/AntibodyScroll";
 
@@ -64,7 +66,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-
+      
+      
+      <Stack.Screen name="NavigationTab" component={NavigationTab} />
         <Stack.Screen name="Artboard" component={Artboard} />
         
         
@@ -77,12 +81,12 @@ export default function App() {
         <Stack.Screen name="Home" component={Home} />
 
         
-        <Stack.Screen name="NavigationTab" component={NavigationTab} />
+        
         <Stack.Screen name="Scan" component={Scan} />
         <Stack.Screen name="Notification" component={Notification} />
-        <Stack.Screen name="UserProfile" component={UserProfile} />
+        
         <Stack.Screen name="Personal Information" component={PersonalInfoEdit}/>
-
+        <Stack.Screen name="UserProfile" component={UserProfile} />
         <Stack.Screen name="Antibody" component={AntibodyScroll} />
         <Stack.Screen name="PersonaInfo" component={PersonInfo} />
 

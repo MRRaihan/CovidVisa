@@ -129,7 +129,6 @@ const ArtBoard = () => {
                 <View style={{flexDirection:"row",justifyContent:"space-between", marginTop: 20}}>
                     <Button labelStyle={{ fontSize: 16 }} icon="copyright">CovidVisa 2021</Button>
                     <Button labelStyle={{ fontSize: 16 }} icon="">21-07-2021</Button>
-                    
                 </View>
             </View>
             </SafeAreaView>

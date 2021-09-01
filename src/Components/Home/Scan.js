@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   TextInput,
 } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 import { Avatar, Button, Card } from "react-native-paper";
 
 import AntibodyLogo from "../../../assets/images/faceRecognition.png";
@@ -15,12 +16,13 @@ const UserProfile = (props) => {
   const [userId, setUserId] = useState();
 
   return (
+    <ScrollView>
     <View style={styles.container}>
       <View style={styles.AntibodyLogo}>
         <Image style={styles.AntibodyLogoImg} source={AntibodyLogo} />
         <View style={styles.UserID}>
           <View style={styles.UserIdStart}>
-            ID: <Text style={styles.UserIdEnd}> 954 322 541 </Text>
+            <Text>ID: </Text><Text style={styles.UserIdEnd}> 954 322 541 </Text>
           </View>
         </View>
       </View>
@@ -104,6 +106,7 @@ const UserProfile = (props) => {
         </View>
       </Card>
     </View>
+    </ScrollView>
   );
 };
 
@@ -160,11 +163,13 @@ const styles = StyleSheet.create({
     width: "80%",
   },
   UserIdStart: {
+    width: "80%",
     flexDirection: "row",
     justifyContent: "center",
     textAlign: "center",
   },
   UserIdEnd: {
+    width: "100%",
     flexDirection: "row",
     justifyContent: "center",
     textAlign: "center",

@@ -1,12 +1,6 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
-  TextInput,
-} from "react-native";
+import {View, Text, StyleSheet, Image, TouchableOpacity, TextInput, } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 import { Avatar, Button, Card } from "react-native-paper";
 
 import AntibodyLogo from "../../../assets/images/userProfileLogoImg.jpg";
@@ -15,102 +9,102 @@ const UserProfile = (props) => {
   const [userId, setUserId] = useState();
 
   return (
-    <View style={styles.container}>
-      <View style={styles.AntibodyLogo}>
-        <Image style={styles.AntibodyLogoImg} source={AntibodyLogo} />
-        <View style={styles.UserID}>
-          <View style={styles.UserIdStart}>
-            ID: <Text style={styles.UserIdEnd}> 954 322 541 </Text>
+    <ScrollView>
+      <View style={styles.container}>
+        <View style={styles.AntibodyLogo}>
+          <Image style={styles.AntibodyLogoImg} source={AntibodyLogo} />
+          <View style={styles.UserID}>
+            <Text style={styles.UserIdStart}>ID: </Text><Text style={styles.UserIdEnd}> 954 322 541 </Text>
           </View>
         </View>
+
+        <Card style={styles.cardStyle}>
+          <View style={{ paddingTop: 10 }}>
+            <Text style={styles.testStyle}>COVID-19 Antibody</Text>
+            <View
+              style={{
+                borderBottomColor: "#e8e2e1",
+                borderBottomWidth: 2,
+                marginBottom: 10,
+              }}
+            />
+            <View style={styles.testContents}>
+              <Text style={styles.testStartItem}>Last affected</Text>
+              <Text style={styles.testEndItem}>12 Sep 2021</Text>
+            </View>
+            <View style={styles.testContents}>
+              <Text style={styles.testStartItem}>Recovered</Text>
+              <Text style={styles.testEndItem}>22 Sep 2021</Text>
+            </View>
+            <View style={styles.testContents}>
+              <Text style={styles.testStartItem}>Antibody Remaining</Text>
+              <Text style={styles.testEndItem}>4 mon 14 days</Text>
+            </View>
+          </View>
+
+          <View style={{ paddingTop: 10 }}>
+            <Text style={styles.testStyle}>PCR Test</Text>
+            <View
+              style={{
+                borderBottomColor: "#e8e2e1",
+                borderBottomWidth: 2,
+                marginBottom: 10,
+              }}
+            />
+            <View style={styles.testContents}>
+              <Text style={styles.testStartItem}>Last Test</Text>
+              <Text style={styles.testEndItem}>12 Sep 2021</Text>
+            </View>
+            <View style={styles.testContents}>
+              <Text style={styles.testStartItem}>Last result</Text>
+              <Text style={styles.testEndItem}>Negative</Text>
+            </View>
+            <View style={styles.testContents}>
+              <Text style={styles.testStartItem}>Test Center</Text>
+              <Text style={styles.testEndItem}>UTTPS</Text>
+            </View>
+            <View style={styles.testContents}>
+              <Text style={styles.testStartItem}>Test Location</Text>
+              <Text style={styles.testEndItem}>Dhaka</Text>
+            </View>
+          </View>
+
+          <View style={{ paddingTop: 10 }}>
+            <Text style={styles.testStyle}>Vaccine</Text>
+            <View
+              style={{
+                borderBottomColor: "#e8e2e1",
+                borderBottomWidth: 2,
+                marginBottom: 10,
+              }}
+            />
+            <View style={styles.testContents}>
+              <Text style={styles.testStartItem}>Dose 1</Text>
+              <Text style={styles.testEndItem}>No data</Text>
+            </View>
+            <View style={styles.testContents}>
+              <Text style={styles.testStartItem}>Dose 2</Text>
+              <Text style={styles.testEndItem}>No data</Text>
+            </View>
+            <View style={styles.testContents}>
+              <Text style={styles.testStartItem}>Vaccine name</Text>
+              <Text style={styles.testEndItem}>No data</Text>
+            </View>
+            <View style={styles.testContents}>
+              <Text style={styles.testStartItem}>Vaccine center</Text>
+              <Text style={styles.testEndItem}>No data</Text>
+            </View>
+            <View style={styles.testContentEdit}>
+              <TouchableOpacity onPress={() => {
+                props.navigation.navigate("Personal Information");
+              }}>
+                <Text style={{ color: "blue" }}>Edit Personal Information</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Card>
       </View>
-
-      <Card style={styles.cardStyle}>
-        <View style={{ paddingTop: 10 }}>
-          <Text style={styles.testStyle}>COVID-19 Antibody</Text>
-          <View
-            style={{
-              borderBottomColor: "#e8e2e1",
-              borderBottomWidth: 2,
-              marginBottom: 10,
-            }}
-          />
-          <View style={styles.testContents}>
-            <Text style={styles.testStartItem}>Last affected</Text>
-            <Text style={styles.testEndItem}>12 Sep 2021</Text>
-          </View>
-          <View style={styles.testContents}>
-            <Text style={styles.testStartItem}>Recovered</Text>
-            <Text style={styles.testEndItem}>22 Sep 2021</Text>
-          </View>
-          <View style={styles.testContents}>
-            <Text style={styles.testStartItem}>Antibody Remaining</Text>
-            <Text style={styles.testEndItem}>4 mon 14 days</Text>
-          </View>
-        </View>
-
-        <View style={{ paddingTop: 10 }}>
-          <Text style={styles.testStyle}>PCR Test</Text>
-          <View
-            style={{
-              borderBottomColor: "#e8e2e1",
-              borderBottomWidth: 2,
-              marginBottom: 10,
-            }}
-          />
-          <View style={styles.testContents}>
-            <Text style={styles.testStartItem}>Last Test</Text>
-            <Text style={styles.testEndItem}>12 Sep 2021</Text>
-          </View>
-          <View style={styles.testContents}>
-            <Text style={styles.testStartItem}>Last result</Text>
-            <Text style={styles.testEndItem}>Negative</Text>
-          </View>
-          <View style={styles.testContents}>
-            <Text style={styles.testStartItem}>Test Center</Text>
-            <Text style={styles.testEndItem}>UTTPS</Text>
-          </View>
-          <View style={styles.testContents}>
-            <Text style={styles.testStartItem}>Test Location</Text>
-            <Text style={styles.testEndItem}>Dhaka</Text>
-          </View>
-        </View>
-
-        <View style={{ paddingTop: 10 }}>
-          <Text style={styles.testStyle}>Vaccine</Text>
-          <View
-            style={{
-              borderBottomColor: "#e8e2e1",
-              borderBottomWidth: 2,
-              marginBottom: 10,
-            }}
-          />
-          <View style={styles.testContents}>
-            <Text style={styles.testStartItem}>Dose 1</Text>
-            <Text style={styles.testEndItem}>No data</Text>
-          </View>
-          <View style={styles.testContents}>
-            <Text style={styles.testStartItem}>Dose 2</Text>
-            <Text style={styles.testEndItem}>No data</Text>
-          </View>
-          <View style={styles.testContents}>
-            <Text style={styles.testStartItem}>Vaccine name</Text>
-            <Text style={styles.testEndItem}>No data</Text>
-          </View>
-          <View style={styles.testContents}>
-            <Text style={styles.testStartItem}>Vaccine center</Text>
-            <Text style={styles.testEndItem}>No data</Text>
-          </View>
-          <View style={styles.testContentEdit}>
-            <TouchableOpacity onPress={() => {
-              props.navigation.navigate("Personal Information");
-            }}>
-              <Text style={{ color: "blue" }}>Edit Personal Information</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </Card>
-    </View>
+    </ScrollView>
   );
 };
 

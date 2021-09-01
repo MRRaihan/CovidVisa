@@ -32,12 +32,14 @@ import {
 const { brand, darkLight, primary, blue } = Colors;
 
 import { View, TouchableOpacity } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 
 const PersonalInfoEdit = (props) => {
   const [hidePassword, setHidePassword] = useState(true);
   const [show, setShow] = useState(false);
 
   return (
+    <ScrollView>
     <StyledContainer>
       <StatusBar style="dark" />
       <InnerContainer>
@@ -120,9 +122,9 @@ const PersonalInfoEdit = (props) => {
 
               <StyledButton onPress={handleSubmit}>
                 <ButtonText
-                  // onPress={() => {
-                  //   props.navigation.navigate("MobileOTP");
-                  // }}
+                  onPress={() => {
+                    props.navigation.navigate("Home");
+                  }}
                 >
                   Save & Edit
                 </ButtonText>
@@ -135,6 +137,7 @@ const PersonalInfoEdit = (props) => {
         </Formik>
       </InnerContainer>
     </StyledContainer>
+    </ScrollView>
   );
 };
 
