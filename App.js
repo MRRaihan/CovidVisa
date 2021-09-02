@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
@@ -66,6 +67,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+
+      <Stack.Screen name="NavigationTab" component={NavigationTab} />
         
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Signup" component={Signup} />
@@ -75,7 +78,7 @@ export default function App() {
         <Stack.Screen name="Face Scan" component={FaceScan} />
         <Stack.Screen name="Home" component={Home} />
 
-        <Stack.Screen name="NavigationTab" component={NavigationTab} />
+        
         
         <Stack.Screen name="Scan" component={Scan} />
         <Stack.Screen name="Notification" component={Notification} />

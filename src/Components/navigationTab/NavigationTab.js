@@ -25,7 +25,7 @@ const NavigationTab = (props) => {
                 <Tab.Screen name="Scan" component={Scan} 
                     options={{
                         tabBarIcon: ({color, size}) =>(
-                            <Icons name="qr-scanner" color={color} size={size}
+                            <Icons name="grid" color={color} size={size}
                                 onPress={() =>
                                     props.navigation.navigate("Scan")
                                 }
@@ -42,7 +42,7 @@ const NavigationTab = (props) => {
                             />
                         ) }}
                 />
-                <Tab.Screen name="UserProfile" component={UserProfile} 
+                <Tab.Screen name="Profile" component={UserProfile} 
                     options={{
                         tabBarIcon: ({color, size}) =>(
                             <Icons name="person" color={color} size={size} 

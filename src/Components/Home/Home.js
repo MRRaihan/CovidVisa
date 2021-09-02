@@ -1,20 +1,14 @@
 import * as React from "react";
-import { Avatar, Button, Card } from "react-native-paper";
-import {
-  TouchableOpacity,
-  StyleSheet,
-  View,
-  Text,
-  Image,
-  ScrollView,
-} from "react-native";
+import { Avatar, Button, Card, Paragraph, Title } from "react-native-paper";
+import { ScrollView } from 'react-native-gesture-handler';
+import { TouchableOpacity, StyleSheet, View, Text,Image} from "react-native";
 
-import Slider from "../../../assets/images/Cslider.jpeg";
+import Slider from "../../../assets/images/slider.png";
 // import Antibody from "../../../assets/images/CAntibody.jpeg";
 import Antibody from "../../../assets/images/battery.png";
 
 import PCR from "../../../assets/images/done.png";
-import Vaccination from "../../../assets/images/Vaccination_200x100.jpeg";
+import Vaccination from "../../../assets/images/Vaccination.jpeg";
 import AddCountry from "../../../assets/images/CAddCountry.jpeg";
 import Booster from "../../../assets/images/CBooster.jpeg";
 
@@ -26,7 +20,15 @@ const Home = (props) => (
   <ScrollView>
   <View style={styles.container}>
     <Card style={styles.Slider}>
-      <Card.Cover style={styles.SliderImage} source={Slider} />
+      <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 5}}>
+        <View style={{color:"white", flexDirection: "column", justifyContent:'flex-start', width:"55%", padding:5}}>
+          <Title>Covid increasing at Bahrain</Title>
+          <Paragraph>Bangladesh fight limited & 10 days quarantine is must.</Paragraph>
+        </View>
+        <View style={{justifyContent:'flex-end', width:"44%", padding:5, height: 150, }}>
+        <Card.Cover style={{width:"100%", height: 150}} source={Slider} />
+        </View>
+      </View>
     </Card>
     <View style={styles.healthData}>
       <Text style={styles.HelthTitle}>Health Data</Text>
@@ -36,7 +38,6 @@ const Home = (props) => (
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "center",
-          margin: 10
         }}
       >
         <Card style={styles.dataFlex}>
@@ -65,7 +66,7 @@ const Home = (props) => (
             </TouchableOpacity>
           </View>
           <View>
-          <TouchableOpacity
+          <TouchableOpacity 
             onPress={() => {
               props.navigation.navigate("Antibody");
             }}
@@ -106,7 +107,7 @@ const Home = (props) => (
               props.navigation.navigate("PCR");
             }}
           >
-            <Image style={styles.SliderImage} source={PCR} />
+            <Image style={{height: 75, width: "90%", marginBottom: 15}} source={PCR} />
           </TouchableOpacity>
         </Card>
       </View>
@@ -146,12 +147,12 @@ const Home = (props) => (
               />
             </TouchableOpacity>
           </View>
-          <TouchableOpacity
+          <TouchableOpacity 
             onPress ={() =>{
                   props.navigation.navigate("Vaccine Registration")
               }}
           >
-            <Image style={styles.SliderImage} source={Vaccination} />
+            <Image style={{height: 95, width: "80%", marginLeft: 15}} source={Vaccination} />
           </TouchableOpacity>
         </Card>
         <Card style={styles.dataFlex}>
@@ -185,7 +186,7 @@ const Home = (props) => (
               props.navigation.navigate("AddCountry");
             }}
           >
-            <Image style={styles.SliderImage} source={AddCountry} />
+            <Image style={{height: 80, width: "90%", marginLeft: 5}} source={AddCountry} />
           </TouchableOpacity>
         </Card>
       </View>
@@ -228,7 +229,7 @@ const Home = (props) => (
               props.navigation.navigate("Booster");
             }}
           >
-            <Image style={styles.SliderImage} source={Booster} />
+            <Image style={{height: 95, width: "80%", marginLeft: 15,}} source={Booster} />
           </TouchableOpacity>
         </Card>
       </View>
@@ -243,17 +244,22 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
-    marginBottom: 20
+    marginBottom: 440,
   },
   Slider: {
-    height: 5,
-    width: "80%",
-    paddingBottom: 10,
-    marginBottom: 10,
+    flex: 1,
+    flexDirection:'row',
+    justifyContent: "space-between",
+    height: 150,
+    width: "100%",
+    marginTop: 150,
+    backgroundColor: "#718AEE",
+    borderRadius: 10,
   },
   HelthTitle: {
     fontSize: 22,
-    marginBottom: 20,
+    marginBottom: 10,
+    marginTop: -50
   },
   healthData: {
     marginTop: 100,
@@ -262,9 +268,11 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     flexDirection: "column",
     padding: 10,
-    margin: 5,
-    height: "100%",
-    width: "49%"
+    marginBottom: -130,
+    width: "50%",
+    borderWidth: 2,
+    margin: 2
+    
   },
   CardInsideTitle: {
     flexDirection: "row",
@@ -275,6 +283,7 @@ const styles = StyleSheet.create({
     height: 65,
     width: "90%",
   },
+ 
   //           nidComment:{
   //               color: 'gray',
   //               fontSize: 20,
