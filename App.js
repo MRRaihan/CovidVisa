@@ -1,7 +1,5 @@
 import 'react-native-gesture-handler';
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
@@ -68,17 +66,17 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
 
-      <Stack.Screen name="NavigationTab" component={NavigationTab} />
+     
         
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="MobileOTP" component={MobileOTP} />
         <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="NIDScan" component={NIDScan} />
+        <Stack.Screen name="NID Scan" component={NIDScan} />
         <Stack.Screen name="Face Scan" component={FaceScan} />
         <Stack.Screen name="Home" component={Home} />
 
-        
+        <Stack.Screen name="NavigationTab" component={NavigationTab} />
         
         <Stack.Screen name="Scan" component={Scan} />
         <Stack.Screen name="Notification" component={Notification} />
@@ -100,7 +98,7 @@ export default function App() {
         <Stack.Screen name="Vaccine Process" component={VaccineProcess} />
         <Stack.Screen name="Vaccine Liveness" component={VaccineLiveness}/>
 
-        <Stack.Screen name="AddCountry" component={AddCountry} />
+        <Stack.Screen name="Add Country" component={AddCountry} />
         <Stack.Screen name="Synchronise" component={Synchronise} />
         
         <Stack.Screen name="Booster" component={Booster} />

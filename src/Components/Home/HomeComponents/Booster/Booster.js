@@ -88,11 +88,11 @@ const Booster = (props) => {
 
                 </View>
 
-                <View style={{ justifyContent: 'center', alignItems: 'center', margin: 20, width:"100%"}}>
-                    <Button title="Register & Exit"style={styles.button} onPress={() => {
-                        props.navigation.navigate("Booster Payment Method");
-                    }} />
-                </View>
+                <TouchableOpacity style={styles.button} onPress={() => {
+                            props.navigation.navigate("Booster Payment Method");
+                    }}>
+                        <Text style={{textAlign:"center", color: "white", fontSize: 20}}>Register & Exit</Text>
+                </TouchableOpacity>
                 
                 
             </View>
@@ -144,12 +144,13 @@ const styles = StyleSheet.create({
     button: {
         justifyContent: "center",
         alignItems: "center",
-        margin: 10,
+        alignContent: 'center',
+        margin: 20,
         borderWidth: 1,
         height: 50,
-        width: "100%",
-        margin: 20,
-        elevation:3,
+        width: "95%",
+        backgroundColor: "#2e47e8",
+        borderRadius: 10
     },
     // pickerItem:{
     //     borderRadius: 10,

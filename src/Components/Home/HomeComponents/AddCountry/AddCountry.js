@@ -11,7 +11,7 @@ const AddCountry = (props) => {
     return (
             <Card style={styles.container}>
                 <View style={styles.itemView}>
-                <Text style={{fontSize: 19, fontWeight: 'bold'}}>From</Text>
+                    <Text style={{fontSize: 19, fontWeight: 'bold'}}>From</Text>
                     <Picker
                         selectedValue={fromAddress}
                         onValueChange={(itemValue, itemIndex) =>

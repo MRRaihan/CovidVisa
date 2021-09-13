@@ -86,7 +86,7 @@ const BoosterPaymentMethod = (props) => {
                 </Card.Content>
                 <View style={{ justifyContent: 'center', alignItems: 'center', width:"100%", marginTop: 30}}>
             <TouchableOpacity style={styles.button} onPress={() => {
-                props.navigation.navigate("Home");
+                props.navigation.navigate("Artboard");
             }}>
                 <Text style={{textAlign:"center", color: "white", fontSize: 20}}>Make Payment</Text>
             </TouchableOpacity>

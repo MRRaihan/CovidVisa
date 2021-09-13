@@ -89,11 +89,11 @@ const PCR = (props) => {
                 </View>
 
 
-                <View style={{ justifyContent: 'center', alignItems: 'center', margin: 20, width:"100%"}}>
-                    <Button title="Register"style={styles.button} onPress={() => {
-                        props.navigation.navigate("Payment Method");
-                    }}/>
-                </View>
+                <TouchableOpacity style={styles.button} onPress={() => {
+                            props.navigation.navigate("Payment Method");
+                    }}>
+                        <Text style={{textAlign:"center", color: "white", fontSize: 20}}>Register</Text>
+                </TouchableOpacity>
                 
                 
             </View>
@@ -145,20 +145,14 @@ const styles = StyleSheet.create({
     button: {
         justifyContent: "center",
         alignItems: "center",
-        margin: 10,
+        alignContent: 'center',
+        margin: 20,
         borderWidth: 1,
         height: 50,
-        width: "100%",
-        margin: 20,
-        elevation:3,
-    },
-    // pickerItem:{
-    //     borderRadius: 10,
-    //     borderColor: "#d9b555",
-    //     backgroundColor: "#ebecf2",
-    //     width: "100%",
-    //     fontSize: 20
-    // }
+        width: "95%",
+        backgroundColor: "#2e47e8",
+        borderRadius: 10
+    }
 
 })
 

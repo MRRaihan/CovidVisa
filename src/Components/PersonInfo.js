@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import {Picker} from '@react-native-picker/picker';
-import RadioGroup from 'react-native-radio-buttons-group';
-import DateTimePicker from '@react-native-community/datetimepicker';
-import DocumentPicker from 'react-native-document-picker';
+// import DateTimePicker from '@react-native-community/datetimepicker';
+// import DocumentPicker from 'react-native-document-picker';
 import {Text, View, StyleSheet, Image, Button, TextInput, TouchableOpacity, Platform} from 'react-native';
 
 
@@ -78,7 +77,7 @@ const PersonInfo = (props) => {
                                         multiline={true}
                               />
                               <View style={styles.radioButtonContainer}>
-                                    <Text>Were you affected COVID-19 before?</Text>
+                                    <Text style={{color: "gray"}}>Were you affected COVID-19 before?</Text>
                                     <Picker
                                       selectedValue={selectedItem}
                                       onValueChange={(itemValue, itemIndex) =>

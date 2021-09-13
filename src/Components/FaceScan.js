@@ -9,7 +9,7 @@ const FaceScan = (props) => {
   return(
     <View style={styles.container}>
       <Text style={styles.nidComment}>Place your face to take a clear photo</Text>
-      <Card>
+      <Card style={{marginTop: 30, marginBottom: 365, width: "90%"}}>
         <Card.Cover style={styles.personNID} source={NID} />
         <Card.Actions style={styles.nidActions}>
           <TouchableOpacity>
@@ -35,39 +35,37 @@ const FaceScan = (props) => {
 }
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100%",
-  },
-  nidComment: {
-    color: "gray",
-    fontSize: 20,
-    justifyContent: "center",
-    alignItems: "center",
-    marginBottom: 20,
-  },
-  personNID: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: "100%"
+    },
+    nidComment:{
+        color: 'gray',
+        fontSize: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 70
+    },
+    personNID:{
     height:  210,
-    width: 330,
-  },
-  nidActions: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  button: {
+    width: 351,
+
+    },
+    nidActions:{
+    flexDirection:'row',
+    justifyContent: 'center',
+    alignItems: 'center'
+},
+button: {
     backgroundColor: "#2a24c9",
     justifyContent: "center",
     alignItems: "center",
-    margin: 10,
-    borderWidth: 1,
     height: 40,
     width: "70%",
     borderRadius: 10,
-    margin: 20,
-    elevation:3,
-}
+    marginBottom: 15
+},
 });
 
 export default FaceScan;

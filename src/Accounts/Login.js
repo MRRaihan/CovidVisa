@@ -56,7 +56,7 @@ const Login = (props) => {
 
                                                             <MsgBox>....</MsgBox>
                                                             <StyledButton onPress={handleSubmit}>
-                                                                      <ButtonText onPress={()=>{props.navigation.navigate("NIDScan")}}>Login</ButtonText>
+                                                                      <ButtonText onPress={()=>{props.navigation.navigate("NID Scan")}}>Login</ButtonText>
                                                             </StyledButton>
                                                             <Line />
                                                             <ExtraView>
