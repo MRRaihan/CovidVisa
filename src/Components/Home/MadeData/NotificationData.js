@@ -20,19 +20,21 @@ const NotificationData =[
         statusDetails: "Congratulations! Your  PCR result is negative. This result is valid for next 48 hours.",
         time: "12:30PM  20 May 2021",
     },
+    {
+        title: "UTTPS",
+        statusDetails: "Your vaccine shedule is activated. Please come to center at 20 May.",
+        time: "10:15PM  5 May 2021",
+    },
+    {
+        title: "Kuet Moitri Hospital",
+        statusDetails: "Sorry! Your  PCR result is still now . Please wait some of time.",
+        time: "10:30AM  10 May 2021",
+    },
+    {
+        title: "Covid Visa",
+        statusDetails: "Your antibody is about to expire with in 7 Days ",
+        time: "4:55PM  20 May 2021",
+    },
 ];
 
 export default NotificationData;
-
-
-// // Try to pass the value using mapping
-// {
-//                     NotificationData.map((val, ind) =>{
-//                     return <Card 
-//                               key={ind} 
-//                               title={val.title}
-//                               statusDetails={val.statusDetails}
-//                               time={val.time}
-//                               />
-//                     })
-//           }

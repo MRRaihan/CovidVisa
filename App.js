@@ -12,7 +12,7 @@ import NIDScan from "./src/Components/NIDScan";
 import FaceScan from "./src/Components/FaceScan";
 import PersonInfo from "./src/Components/PersonInfo";
 
-import Home from "./src/Components/Home/Home";
+import HomePage from "./src/Components/Home/Home";
 import Scan from "./src/Components/Home/Scan";
 import Notification from "./src/Components/Home/Notification";
 import UserProfile from "./src/Components/Home/UserProfile";
@@ -74,15 +74,15 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="NID Scan" component={NIDScan} />
         <Stack.Screen name="Face Scan" component={FaceScan} />
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="MainHome" component={HomePage} />
 
-        <Stack.Screen name="NavigationTab" component={NavigationTab} />
+        <Stack.Screen name="Home" component={NavigationTab} />
         
         <Stack.Screen name="Scan" component={Scan} />
         <Stack.Screen name="Notification" component={Notification} />
         
         <Stack.Screen name="Personal Information" component={PersonalInfoEdit}/>
-        <Stack.Screen name="UserProfile" component={UserProfile} />
+        <Stack.Screen name="Profile" component={UserProfile} />
         <Stack.Screen name="Antibody" component={AntibodyScroll} />
         <Stack.Screen name="PersonaInfo" component={PersonInfo} />
 

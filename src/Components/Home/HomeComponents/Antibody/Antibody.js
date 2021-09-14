@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   },
   testEndItem: {
     justifyContent: "flex-end",
-    marginTop: 150
+    marginTop: 130
   },
   AntibodyLogo: {
     justifyContent: "center",

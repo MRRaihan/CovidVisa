@@ -248,7 +248,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
-    marginBottom: 440,
+    marginBottom: 285,
   },
   Slider: {
     flex: 1,

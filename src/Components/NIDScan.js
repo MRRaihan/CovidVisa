@@ -1,69 +1,95 @@
-import * as React from 'react';
-import { Avatar, Button, Card } from 'react-native-paper';
-import {TouchableOpacity, StyleSheet, View, Text} from 'react-native';
-import NID from "../../assets/images/nid.jpg";
-
-const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
+import React, { useState, useEffect } from 'react';
+import { Text, View, StyleSheet, Button, TouchableOpacity } from 'react-native';
+import { BarCodeScanner } from 'expo-barcode-scanner';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const NIDScan = (props) => {
-    return(
+    const [hasPermission, setHasPermission] = useState(null);
+  const [scanned, setScanned] = useState(false);
+  const [text, setText] = useState('Not yet scanned')
+
+  const askForCameraPermission = () => {
+    (async () => {
+      const { status } = await BarCodeScanner.requestPermissionsAsync();
+      setHasPermission(status === 'granted');
+    })()
+  }
+
+  // Request Camera Permission
+  useEffect(() => {
+    askForCameraPermission();
+  }, []);
+
+  // What happens when we scan the bar code
+  const handleBarCodeScanned = ({ type, data }) => {
+    setScanned(true);
+    setText(data)
+    console.log('Type: ' + type + '\nData: ' + data)
+  };
+
+  // Check permissions and return the screens
+  if (hasPermission === null) {
+    return (
+      <View style={styles.container}>
+        <Text>Requesting for camera permission</Text>
+      </View>)
+  }
+  if (hasPermission === false) {
+    return (
+      <View style={styles.container}>
+        <Text style={{ margin: 10 }}>No access to camera</Text>
+        <Button title={'Allow Camera'} onPress={() => askForCameraPermission()} />
+      </View>)
+  }
+
+  // Return the View
+  return (
+      <ScrollView>
         <View style={styles.container}>
-            <Text style={styles.nidComment}>Place your NID to take a clear photo</Text>
-            
-            <Card style={{marginTop: 30, marginBottom: 365, width: "90%"}}>
-                <Card.Cover style={styles.personNID} source={NID} />
-                    <Card.Actions style={styles.nidActions}>
-                    <TouchableOpacity>
-                            <Button labelStyle={{ fontSize: 35 }} icon="swap-horizontal"></Button>
-                    </TouchableOpacity>
-                    <TouchableOpacity >
-                            <Button labelStyle={{ fontSize: 35 }} icon="camera" ></Button>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                            <Button labelStyle={{ fontSize: 35 }} icon="camera-retake-outline" ></Button>
-                    </TouchableOpacity>
-                </Card.Actions>
-                <View style={{justifyContent: "center", alignItems: "center"}}>
-                    <TouchableOpacity style={styles.button} onPress={() => {
-                        props.navigation.navigate("Face Scan");
-                    }}>
-                        <Text style={{textAlign:"center", color: "white", fontSize: 20}}>Next</Text>
-                    </TouchableOpacity>
-                </View>
-            </Card>
+                    <View style={styles.barcodebox}>
+                        <BarCodeScanner
+                        onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
+                        style={{ height: 550, width: "100%" }} />
+                    </View>
+                    <Text style={styles.maintext}>{text}</Text>
+
+                    {scanned && <Button style={{fontSize: 30}} title={'Scan again?'} onPress={() => setScanned(false)} color='tomato' />}
 
             
+            <View style={{ justifyContent: 'center', alignItems: 'center', width:"100%", marginTop: 20}}>
+                <TouchableOpacity style={styles.button} onPress={() => {
+                props.navigation.navigate("Face Scan");
+                }}>
+                <Text style={{textAlign:"center", color: "white", fontSize: 20}}>Next</Text>
+                </TouchableOpacity>
+            </View>
         
+        </View>
+    </ScrollView>
 
-    </View>
-    )
+  );
 }
 
 const styles = StyleSheet.create({
-    container: {
-    flexDirection: 'column',
-    justifyContent: 'center',
+  container: {
+    flex: 1,
     alignItems: 'center',
-    width: "100%"
-    },
-    nidComment:{
-        color: 'gray',
-        fontSize: 20,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 70
-    },
-    personNID:{
-    height:  210,
-    width: 351,
-
-    },
-    nidActions:{
-    flexDirection:'row',
     justifyContent: 'center',
-    alignItems: 'center'
-},
-button: {
+    width: "100%",
+    marginTop: 20
+  },
+  maintext: {
+    fontSize: 16,
+    margin: 20,
+  },
+  barcodebox: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 400,
+    width: "100%",
+    overflow: 'hidden',
+  },
+  button: {
     backgroundColor: "#2a24c9",
     justifyContent: "center",
     alignItems: "center",
@@ -72,6 +98,6 @@ button: {
     borderRadius: 10,
     marginBottom: 15
 },
-})
+});
 
 export default NIDScan;

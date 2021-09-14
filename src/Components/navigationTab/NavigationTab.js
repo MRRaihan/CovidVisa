@@ -47,7 +47,7 @@ const NavigationTab = (props) => {
                         tabBarIcon: ({color, size}) =>(
                             <Icons name="person" color={color} size={size} 
                                 onPress={() =>
-                                    props.navigation.navigate("UserProfile")
+                                    props.navigation.navigate("Profile")
                                 }
                             />
                         )

@@ -12,9 +12,9 @@ return (
 return (
         <Card style={styles.cardStyle}>
         <Card.Content>
-                <Title>{val.title}</Title>
-                <Paragraph>{val.statusDetails}</Paragraph>
-                <Paragraph style={{color: "gray", margin: 5}}>{val.time}</Paragraph>
+                <Title style={{fontSize: 25}}>{val.title}</Title>
+                <Paragraph style={{fontSize: 19}}>{val.statusDetails}</Paragraph>
+                <Paragraph style={{color: "gray", margin: 5, fontSize: 19}}>{val.time}</Paragraph>
                 <View
                             style={{
                             borderBottomColor: "#e8e2e1",
@@ -39,10 +39,12 @@ container: {
           alignItems: 'center',
           height: '100%',
           width: '100%',
+          marginTop: 10,
+          marginBottom: 20
 },
 cardStyle: {
           backgroundColor: "white",
-          width: "80%",
+          width: "90%",
           height: "auto",
 },
 });
