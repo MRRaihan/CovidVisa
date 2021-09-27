@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { SliderBox } from "react-native-image-slider-box";
+// import Carousel from 'react-native-snap-carousel';
 import { Card } from "react-native-paper";
 
 class CheckGallery extends Component {

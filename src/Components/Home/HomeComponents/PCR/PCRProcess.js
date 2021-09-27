@@ -134,7 +134,7 @@ ref={camRef}
 }
 
     <TouchableOpacity style={styles.nextActions} onPress ={()=>{
-            props.navigation.navigate("Liveness") 
+            props.navigation.navigate("PCR Liveness") 
         }} >
         <Text style={{ color:"white", fontSize: 20
      }}>NEXT</Text> 
